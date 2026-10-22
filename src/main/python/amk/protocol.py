@@ -1551,6 +1551,12 @@ class ProtocolAmk(BaseProtocol):
         else:
             print("Invalid RGB param: ", param)
 
+    def rgb_strip_supports_sync(self, index):
+        strips = self.amk_rgb_strip["strips"]
+        master = strips[index].get("master")
+        # 0xFF is the protocol's unsynchronized sentinel, not a master index.
+        return type(master) is int and 0 <= master < min(len(strips), 0xFF)
+
     def reload_amk_rgb_params(self, rgb_type):
         if rgb_type == RGB_TYPE_MATRIX:
             self.reload_rgb_param(RGB_TYPE_MATRIX, RGB_PARAM_COLOR)
@@ -1559,8 +1565,10 @@ class ProtocolAmk(BaseProtocol):
             for i in range (len(self.amk_rgb_strip["strips"])):
                 self.reload_rgb_param(RGB_TYPE_STRIP, RGB_PARAM_COLOR, i)
                 self.reload_rgb_param(RGB_TYPE_STRIP, RGB_PARAM_SPEED, i)
-                #self.amk_rgb_strip["strips"][i]["sync"] = 0xFF
-                self.reload_rgb_param(RGB_TYPE_STRIP, RGB_PARAM_SYNC, i)
+                if self.rgb_strip_supports_sync(i):
+                    # A rejected read must not leave a stale synchronization value.
+                    self.amk_rgb_strip["strips"][i].pop("sync", None)
+                    self.reload_rgb_param(RGB_TYPE_STRIP, RGB_PARAM_SYNC, i)
                 if self.amk_feature["bright"]:
                     #print("has bright feature")
                     self.reload_rgb_param(RGB_TYPE_STRIP, RGB_PARAM_BRIGHT, i)

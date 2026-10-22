@@ -69,27 +69,27 @@ FILE_FILTER_IMAGES="Images (*.jpg *.png *.bmp)"
 FILE_FILTER_ANIMATIONS="Animations (*.gif)"
 FILE_FILTER_AMK="Converted Files (*.anm *.sml *.bkg *.crs *.sts)"
 
-DOWNLOAD_BTN_CONVERTING = "Converting 正在转换"
-DOWNLOAD_BTN_UPLOAD = "Uploading 正在上传"
-DOWNLOAD_BTN_NORMAL = "Upload to keyboard (Standard Mode) 上传到键盘（标准模式）"
+DOWNLOAD_BTN_CONVERTING = "Converting…"
+DOWNLOAD_BTN_UPLOAD = "Uploading…"
+DOWNLOAD_BTN_NORMAL = "Upload (standard mode)"
 
-FASTDOWNLOAD_BTN_UPLOAD = "Uploading 正在上传"
-FASTDOWNLOAD_BTN_NORMAL = "Upload to keyboard (Advance Mode) 上传到键盘（高级模式）"
+FASTDOWNLOAD_BTN_UPLOAD = "Uploading…"
+FASTDOWNLOAD_BTN_NORMAL = "Upload (advanced mode)"
 
-COPY_BTN_DOWNLOAD = "Downloading 正在下载"
-COPY_BTN_NORMAL = "Download 下载"
+COPY_BTN_DOWNLOAD = "Downloading…"
+COPY_BTN_NORMAL = "Download"
 
-CONVERT_BTN_CONVERT = "Converting 正在转换"
-CONVERT_BTN_NORMAL = "Convert&&Save 转换保存"
+CONVERT_BTN_CONVERT = "Converting…"
+CONVERT_BTN_NORMAL = "Convert && Save"
 
-CONVERT_MSG_UNSUPPORTED = "Unsupported format 不支持的格式"
-CONVERT_MSG_FAILURE = "Failed to convert animation file 转换失败"
+CONVERT_MSG_UNSUPPORTED = "Unsupported format."
+CONVERT_MSG_FAILURE = "Failed to convert the animation."
 
-SELECT_MSG_FORMAT = "Please select format 请选择正确的文件格式"
-SELECT_MSG_FILE = "Please select file 请先选择需要处理的文件"
-SELECT_MSG_FILE_FALURE = "Unsupport file 不支持的文件"
+SELECT_MSG_FORMAT = "Select an output format."
+SELECT_MSG_FILE = "Select a file first."
+SELECT_MSG_FILE_FALURE = "Unsupported file."
 
-DISK_MSG_OOM = "Not enough space on disk for this file 键盘空间不足"
+DISK_MSG_OOM = "Not enough space on the keyboard for this file."
 
 def convert_frame(image, dst_width, dst_height, file_name):
     image_width = image.rect().width()
@@ -478,7 +478,7 @@ class Animation(BasicEditor):
         u_lyt.addStretch(1)
 
         lyt = QVBoxLayout()
-        lbl = QLabel("Preview 预览")
+        lbl = QLabel("Preview")
         lyt.addWidget(lbl)
         self.display_label = QLabel()
         self.display_label.setMinimumSize(QSize(640, 480))
@@ -489,7 +489,7 @@ class Animation(BasicEditor):
         lyt.addWidget(self.display_label)
 
         lyt2 = QHBoxLayout()
-        self.select_btn = QPushButton("Select File 选择文件")
+        self.select_btn = QPushButton("Select file…")
         #self.select_btn.setMaximumSize(QSize(300, 100))
         self.select_btn.clicked.connect(self.on_select_btn_clicked)
         lyt2.addWidget(self.select_btn)
@@ -521,7 +521,7 @@ class Animation(BasicEditor):
         u_lyt.addLayout(lyt)
 
         lyt = QVBoxLayout()
-        lbl = QLabel("Files in keyboard 键盘内文件")
+        lbl = QLabel("Files on keyboard")
         lyt.addWidget(lbl)
         self.file_lst = QListWidget()
         self.file_lst.setMaximumSize(QSize(400, 480))
@@ -529,11 +529,11 @@ class Animation(BasicEditor):
         lyt.addWidget(self.file_lst)
 
         lyt2 = QHBoxLayout()
-        self.refresh_btn = QPushButton("Refresh 刷新")
+        self.refresh_btn = QPushButton("Refresh")
         self.refresh_btn.setEnabled(False)
         self.refresh_btn.clicked.connect(self.on_refresh_btn_clicked)
         lyt2.addWidget(self.refresh_btn)
-        self.delete_btn = QPushButton("Delete 删除")
+        self.delete_btn = QPushButton("Delete")
         self.delete_btn.setEnabled(False)
         self.delete_btn.clicked.connect(self.on_delete_btn_clicked)
         lyt2.addWidget(self.delete_btn)

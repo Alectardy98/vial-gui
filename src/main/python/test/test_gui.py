@@ -2,6 +2,8 @@ import lzma
 import os.path
 import struct
 
+import pytest
+
 from PyQt5.QtCore import QPoint
 from PyQt5.QtWidgets import QPushButton
 from pytestqt.qt_compat import qt_api
@@ -15,6 +17,7 @@ from protocol.constants import CMD_VIA_GET_PROTOCOL_VERSION, CMD_VIA_VIAL_PREFIX
     CMD_VIA_SET_KEYCODE, DYNAMIC_VIAL_COMBO_GET, DYNAMIC_VIAL_COMBO_SET, DYNAMIC_VIAL_TAP_DANCE_GET, \
     DYNAMIC_VIAL_TAP_DANCE_SET
 from widgets.square_button import SquareButton
+from amk.protocol import AMK_PROTOCOL_PREFIX, AMK_PROTOCOL_GET_NKRO, AMK_PROTOCOL_OK
 
 FAKE_KEYBOARD = """
 {
@@ -135,7 +138,9 @@ class VirtualKeyboard:
         raise RuntimeError("unknown command for Vial protocol 0x{:02X}".format(msg[1]))
 
     def process(self, msg):
-        if msg[0] == CMD_VIA_VIAL_PREFIX:
+        if msg[:2] == bytes([AMK_PROTOCOL_PREFIX, AMK_PROTOCOL_GET_NKRO]):
+            return bytes([AMK_PROTOCOL_PREFIX, AMK_PROTOCOL_GET_NKRO, AMK_PROTOCOL_OK, 1])
+        elif msg[0] == CMD_VIA_VIAL_PREFIX:
             return self.vial_cmd(msg)
         elif msg[0] == CMD_VIA_GET_PROTOCOL_VERSION:
             return struct.pack(">BH", msg[0], 9)
@@ -190,6 +195,15 @@ class FakeAppctx:
 all_mw = []
 
 
+@pytest.fixture(autouse=True)
+def stop_mock_polling_after_test(qtbot):
+    yield
+    # Retained windows avoid the existing key-widget lifetime issue, but their
+    # mock discovery loops must not observe a later test's HID replacements.
+    for window in all_mw:
+        window.autorefresh.thread.lock()
+
+
 def prepare(qtbot, keyboard_json, combos=None, tap_dance=None):
     import hidraw as hid
 
@@ -205,6 +219,10 @@ def prepare(qtbot, keyboard_json, combos=None, tap_dance=None):
     # keep reference to MainWindow for the duration of tests
     # when MainWindow goes out of scope some KeyWidgets are still registered within KeycodeDisplay which causes UaF
     all_mw.append(mw)
+
+    # Linux's initial discovery result is delivered asynchronously by the worker.
+    qtbot.waitUntil(lambda: mw.autorefresh.current_device is not None
+                   and mw.autorefresh.current_device.keyboard is not None)
 
     return mw, vk
 
@@ -480,7 +498,7 @@ def test_combos(qtbot):
     min_y = min(p.y() for p in bbox)
     max_y = max(p.y() for p in bbox)
     pos_mask = QPoint(int((min_x + max_x) / 2), int(min_y + (max_y - min_y) * 4/5))
-    pos = QPoint(bbox[0].x(), bbox[0].y())
+    pos = QPoint(int(bbox[0].x()), int(bbox[0].y()))
     qtbot.mouseClick(w[0], qt_api.QtCore.Qt.MouseButton.LeftButton, pos=pos)
     assert mw.tray_keycodes.isVisible()
 
@@ -570,7 +588,7 @@ def test_tap_dance(qtbot):
     min_y = min(p.y() for p in bbox)
     max_y = max(p.y() for p in bbox)
     pos_mask = QPoint(int((min_x + max_x) / 2), int(min_y + (max_y - min_y) * 4/5))
-    pos = QPoint(bbox[0].x(), bbox[0].y())
+    pos = QPoint(int(bbox[0].x()), int(bbox[0].y()))
     qtbot.mouseClick(w[0], qt_api.QtCore.Qt.MouseButton.LeftButton, pos=pos)
     assert mw.tray_keycodes.isVisible()
 

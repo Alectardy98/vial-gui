@@ -1,3 +1,4 @@
+from ui_text import device_text
 # SPDX-License-Identifier: GPL-2.0-or-later
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QLabel, QSlider, QPushButton, QCheckBox, QColorDialog, QListWidget, QFileDialog
 from PyQt5.QtCore import Qt, QTimer
@@ -96,23 +97,23 @@ class RgbMatrix(BasicEditor):
         self.mode_lst.itemSelectionChanged.connect(self.on_mode_changed)
         layout.addWidget(self.mode_lst)
         layout.addStretch(1)
-        self.color_btn = QPushButton(tr("RGB Matrix", "Color/颜色..."))
+        self.color_btn = QPushButton(tr("RGB Matrix", "Color…"))
         self.color_btn.clicked.connect(self.on_color_btn_clicked)
         layout.addWidget(self.color_btn)
-        self.on_cbx = QCheckBox(tr("RGB Matrix", "Toggle On/切换状态"))
+        self.on_cbx = QCheckBox(tr("RGB Matrix", "Enabled"))
         self.on_cbx.stateChanged.connect(self.on_state_check)
         layout.addWidget(self.on_cbx)
-        self.dynamic_cbx = QCheckBox(tr("RGB Matrix", "Toggle Dynamic/切换动态效果"))
+        self.dynamic_cbx = QCheckBox(tr("RGB Matrix", "Dynamic"))
         self.dynamic_cbx.stateChanged.connect(self.on_dynamic_check)
         layout.addWidget(self.dynamic_cbx)
-        self.blink_cbx = QCheckBox(tr("RGB Matrix", "Toggle Blink/切换闪烁效果"))
+        self.blink_cbx = QCheckBox(tr("RGB Matrix", "Blink"))
         self.blink_cbx.stateChanged.connect(self.on_blink_check)
         layout.addWidget(self.blink_cbx)
-        self.breath_cbx = QCheckBox(tr("RGB Matrix", "Toggle Breath/切换呼吸效果"))
+        self.breath_cbx = QCheckBox(tr("RGB Matrix", "Breathing"))
         self.breath_cbx.stateChanged.connect(self.on_breath_check)
         layout.addWidget(self.breath_cbx)
         lyt = QHBoxLayout()
-        lyt.addWidget(QLabel(tr("RGB Matrix", "Speed/速度")))
+        lyt.addWidget(QLabel(tr("RGB Matrix", "Speed")))
         self.speed_sld = QSlider(Qt.Horizontal)
         self.speed_sld.setMaximumWidth(300)
         self.speed_sld.setMinimumWidth(200)
@@ -124,7 +125,7 @@ class RgbMatrix(BasicEditor):
         self.speed_sld.valueChanged.connect(self.on_speed_sld) 
         lyt.addWidget(self.speed_sld)
         layout.addLayout(lyt)
-        self.animation_btn = QPushButton(tr("RGB Matrix", "Load Animation/导入动画"))
+        self.animation_btn = QPushButton(tr("RGB Matrix", "Load animation…"))
         self.animation_btn.clicked.connect(self.on_animation_btn_clicked)
         layout.addWidget(self.animation_btn)
         layout.addStretch(3)
@@ -160,7 +161,7 @@ class RgbMatrix(BasicEditor):
     def reset_keyboard_widget(self):
         if self.valid():    
             self.mode_lst.clear()
-            self.mode_lst.addItems(self.keyboard.amk_rgb_matrix["effects"])
+            self.mode_lst.addItems([device_text(effect) for effect in self.keyboard.amk_rgb_matrix["effects"]])
 
             self.speed_sld.setValue(self.keyboard.amk_rgb_matrix["speed"]*self.speed_sld.maximum() // 255)
             self.keyboardWidget.update_layout()

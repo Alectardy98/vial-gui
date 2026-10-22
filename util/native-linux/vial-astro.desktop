@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Vial Astro
+Comment=Custom AMK Vial keyboard configurator
+Exec=VialAstro
+Icon=vial-astro
+Terminal=false
+Categories=Utility;

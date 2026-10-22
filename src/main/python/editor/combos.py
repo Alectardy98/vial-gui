@@ -35,13 +35,13 @@ class ComboEntryUI(QObject):
         for x in range(4):
             kc_widget = KeyWidget()
             kc_widget.changed.connect(self.on_key_changed)
-            self.container.addWidget(QLabel("Key/按键 {}".format(x + 1)), x, 0)
+            self.container.addWidget(QLabel("Key {}".format(x + 1)), x, 0)
             self.container.addWidget(kc_widget, x, 1)
             self.kc_inputs.append(kc_widget)
 
         self.kc_output = KeyWidget()
         self.kc_output.changed.connect(self.on_key_changed)
-        self.container.addWidget(QLabel("Output key/输出键"), 4, 0)
+        self.container.addWidget(QLabel("Output key"), 4, 0)
         self.container.addWidget(self.kc_output, 4, 1)
 
     def widget(self):
@@ -86,8 +86,8 @@ class Combos(BasicEditor):
             entry.key_changed.connect(self.on_key_changed)
             self.combo_entries_available.append(entry)
 
-        desc_label = QLabel(tr("Combos", "组合键功能允许在同时按下多个按键(最多4个)时, 触发一个新的按键.\n"
-                                "例如: 按下<1>+<2>+<3>, 触发<6>."))
+        desc_label = QLabel(tr("Combos", "Press up to four keys together to send one output key."))
+        desc_label.setWordWrap(True)
         self.addWidget(self.tabs)
         self.addWidget(desc_label)
 

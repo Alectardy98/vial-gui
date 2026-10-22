@@ -32,7 +32,7 @@ class KeymapEditor(BasicEditor):
 
         self.layout_layers = QHBoxLayout()
         self.layout_size = QVBoxLayout()
-        layer_label = QLabel(tr("KeymapEditor", "Layer/层"))
+        layer_label = QLabel(tr("KeymapEditor", "Layer"))
 
         layout_labels_container = QHBoxLayout()
         layout_labels_container.addWidget(layer_label)
@@ -46,13 +46,9 @@ class KeymapEditor(BasicEditor):
         self.container.deselected.connect(self.on_key_deselected)
 
         layout_desc_container = QHBoxLayout()
-        desc_label = QLabel(tr("KeymapEditor", "按键设置说明:\n"
-                               "点击上方的层按钮可切换当前层\n"
-                               "确定当前层后，首先在右方选择需要设置的键位\n"
-                               "选择键位后，点击下方的功能键即可设置\n"
-                               "按键设置实时生效，无需保存\n"
-                               "若右侧键盘配列与实际不符,可切换到<配列>页面进行设置\n"
-                               "首次使用键盘时,请使用<按键测试>页面确认按键是否正常\n"))
+        desc_label = QLabel(tr("KeymapEditor", "Select a layer, key, and keycode.\nChanges apply immediately."))
+        desc_label.setWordWrap(True)
+        desc_label.setToolTip(tr("KeymapEditor", "Use Layout to match your physical keyboard and Matrix Tester to check its keys."))
 
         layout_desc_container.addWidget(desc_label, 1)
         layout_desc_container.setAlignment(desc_label, Qt.AlignHCenter)
@@ -151,9 +147,7 @@ class KeymapEditor(BasicEditor):
     def restore_layout(self, data):
         if json.loads(data.decode("utf-8")).get("uid") != self.keyboard.keyboard_id:
             ret = QMessageBox.question(self.widget(), "",
-                                       tr("KeymapEditor", "Saved keymap belongs to a different keyboard,"
-                                                          " are you sure you want to continue?"
-                                                          "/保存的设置属于其它键盘，您确定要继续吗？"
+                                       tr("KeymapEditor", "This keymap belongs to a different keyboard. Continue?"
                                                           ),
                                        QMessageBox.Yes | QMessageBox.No)
             if ret != QMessageBox.Yes:

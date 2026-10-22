@@ -73,17 +73,17 @@ class OptionsUI(QWidget):
         container = QVBoxLayout()
 
         self.opt_activation_trigger_down = CheckBoxNoPadding(
-            tr("KeyOverride", "Activate when the trigger key is pressed down/在触发键按下时生效"))
+            tr("KeyOverride", "Activate when the trigger key is pressed"))
         self.opt_activation_required_mod_down = CheckBoxNoPadding(
-            tr("KeyOverride", "Activate when a necessary modifier is pressed down/在触发修饰符按下时生效"))
+            tr("KeyOverride", "Activate when a trigger modifier is pressed"))
         self.opt_activation_negative_mod_up = CheckBoxNoPadding(
-            tr("KeyOverride", "Activate when a negative modifier is released/在禁用修饰符未按下时才能生效"))
+            tr("KeyOverride", "Activate when a negative modifier is released"))
         self.opt_one_mod = CheckBoxNoPadding(
-            tr("KeyOverride", "Activate on one modifier/触发修饰符中任意一个按下即可生效,否则需要按下所有已定义的触发修饰符才能生效"))
+            tr("KeyOverride", "Activate with any trigger modifier"))
         self.opt_no_reregister_trigger = CheckBoxNoPadding(
-            tr("KeyOverride", "Don't register the trigger key again after the override is deactivated/在替换按键被释放后且触发键在按下状态时,不会重新激活触发键"))
+            tr("KeyOverride", "Do not re-register the trigger key after deactivation"))
         self.opt_no_unregister_on_other_key_down = CheckBoxNoPadding(
-            tr("KeyOverride", "Don't deactivate when another key is pressed down/在任意键被按下的状态时，不会释放替换键"))
+            tr("KeyOverride", "Keep the override active when another key is pressed"))
 
         for w in [self.opt_activation_trigger_down, self.opt_activation_required_mod_down,
                   self.opt_activation_negative_mod_up, self.opt_one_mod, self.opt_no_reregister_trigger,
@@ -127,10 +127,10 @@ class LayersUI(QWidget):
         for w in self.layer_chks:
             w.stateChanged.connect(self.on_change)
         btn_all_layers = QToolButton()
-        btn_all_layers.setText(tr("KeyOverride", "Enable all/在所有层上启用"))
+        btn_all_layers.setText(tr("KeyOverride", "Enable all layers"))
         btn_all_layers.setToolButtonStyle(Qt.ToolButtonTextOnly)
         btn_no_layers = QToolButton()
-        btn_no_layers.setText(tr("KeyOverride", "Disable all/在所有层上禁用"))
+        btn_no_layers.setText(tr("KeyOverride", "Disable all layers"))
         btn_no_layers.setToolButtonStyle(Qt.ToolButtonTextOnly)
         btn_all_layers.clicked.connect(self.on_enable_all_layers)
         btn_no_layers.clicked.connect(self.on_disable_all_layers)
@@ -204,28 +204,28 @@ class KeyOverrideEntryUI(QObject):
         self.w2 = make_scrollable(l)
 
     def populate_container(self):
-        self.container.addWidget(QLabel(tr("KeyOverride", "Enable/启用")), 0, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Enable")), 0, 0)
         self.container.addWidget(self.enable_chk, 0, 1)
 
-        self.container.addWidget(QLabel(tr("KeyOverride", "Enable on layers/在层上启用")), 1, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Enable on layers")), 1, 0)
         self.container.addWidget(self.layers, 1, 1)
 
-        self.container.addWidget(QLabel(tr("KeyOverride", "Trigger/触发按键")), 2, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Trigger")), 2, 0)
         self.container.addWidget(self.trigger_key, 2, 1)
 
-        self.container.addWidget(QLabel(tr("KeyOverride", "Trigger mods/触发修饰符")), 3, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Trigger modifiers")), 3, 0)
         self.container.addWidget(self.trigger_mods, 3, 1)
 
-        self.container.addWidget(QLabel(tr("KeyOverride", "Negative mods/禁用修饰符")), 4, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Negative modifiers")), 4, 0)
         self.container.addWidget(self.negative_mods, 4, 1)
 
-        self.container.addWidget(QLabel(tr("KeyOverride", "Suppressed mods/无效修饰符")), 5, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Suppressed modifiers")), 5, 0)
         self.container.addWidget(self.suppressed_mods, 5, 1)
 
-        self.container.addWidget(QLabel(tr("KeyOverride", "Replacement/替换按键")), 6, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Replacement")), 6, 0)
         self.container.addWidget(self.key_replacement, 6, 1)
 
-        self.container.addWidget(QLabel(tr("KeyOverride", "Options/选项")), 7, 0)
+        self.container.addWidget(QLabel(tr("KeyOverride", "Options")), 7, 0)
         self.container.addWidget(self.options, 7, 1)
 
     def widget(self):
@@ -279,9 +279,8 @@ class KeyOverride(BasicEditor):
 
         self.addWidget(self.tabs)
         desc_label = QLabel(tr("KeyOverride", 
-                               "按键替换功能允许在指定的激活条件下, 触发一个指定按键(替换按键)并可释放指定修饰符(无效修饰符).\n"
-                               "激活条件如下:1.指定按键按下(触发按键),2.指定修饰符按下(触发修饰符),3.指定修饰符处于释放状态(禁用修饰符)\n"
-                               "这些激活条件可由可由前4个选项控制,并且后两个选项可以控制(触发按键)和(替换按键)的特殊行为."))
+                               "Replace a trigger key when the required modifiers are held and negative modifiers are released.\nSuppressed modifiers are released while the replacement is active. Options control activation and release behavior."))
+        desc_label.setWordWrap(True)
         self.addWidget(desc_label)
 
     def rebuild_ui(self):

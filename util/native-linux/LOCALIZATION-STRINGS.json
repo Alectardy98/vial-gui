@@ -1,0 +1,4266 @@
+{
+  "chinese_literals_replaced": 483,
+  "diagram_captions_localized": 6,
+  "changed_python_files": 29,
+  "protected_files_verified": 15,
+  "changes": [
+    {
+      "file": "src/main/python/amk/animation.py",
+      "before": [
+        "Converting 正在转换",
+        "Uploading 正在上传",
+        "Upload to keyboard (Standard Mode) 上传到键盘（标准模式）",
+        "Uploading 正在上传",
+        "Upload to keyboard (Advance Mode) 上传到键盘（高级模式）",
+        "Downloading 正在下载",
+        "Download 下载",
+        "Converting 正在转换",
+        "Convert&&Save 转换保存",
+        "Unsupported format 不支持的格式",
+        "Failed to convert animation file 转换失败",
+        "Please select format 请选择正确的文件格式",
+        "Please select file 请先选择需要处理的文件",
+        "Unsupport file 不支持的文件",
+        "Not enough space on disk for this file 键盘空间不足"
+      ],
+      "after": [
+        "Converting…",
+        "Uploading…",
+        "Upload (standard mode)",
+        "Uploading…",
+        "Upload (advanced mode)",
+        "Downloading…",
+        "Download",
+        "Converting…",
+        "Convert && Save",
+        "Unsupported format.",
+        "Failed to convert the animation.",
+        "Select an output format.",
+        "Select a file first.",
+        "Unsupported file.",
+        "Not enough space on the keyboard for this file."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/animation.py",
+      "before": [
+        "Preview 预览"
+      ],
+      "after": [
+        "Preview"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/animation.py",
+      "before": [
+        "Select File 选择文件",
+        "Files in keyboard 键盘内文件",
+        "Refresh 刷新",
+        "Delete 删除"
+      ],
+      "after": [
+        "Select file…",
+        "Files on keyboard",
+        "Refresh",
+        "Delete"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "APC/RT setting/设置"
+      ],
+      "after": [
+        "Actuation point / Rapid Trigger"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Profiles/配置列表: "
+      ],
+      "after": [
+        "Profile:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the actuation point/设置当前激活行程:"
+      ],
+      "after": [
+        "Actuation point (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Enable/激活 RT"
+      ],
+      "after": [
+        "Rapid Trigger"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the rappid trigger/设置 RT:"
+      ],
+      "after": [
+        "Rapid Trigger distance (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Enable continuous/启用连续 RT"
+      ],
+      "after": [
+        "Continuous Rapid Trigger"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Enable press/启用按下 RT"
+      ],
+      "after": [
+        "Separate press distance"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the rappid trigger press/设置按下RT:"
+      ],
+      "after": [
+        "Press distance (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the rappid trigger/设置RT:"
+      ],
+      "after": [
+        "Rapid Trigger distance (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the rappid trigger release/设置抬起RT:"
+      ],
+      "after": [
+        "Release distance (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the rappid trigger/设置RT:"
+      ],
+      "after": [
+        "Rapid Trigger distance (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the rappid trigger release/设置抬起RT:"
+      ],
+      "after": [
+        "Release distance (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/apc_rt.py",
+      "before": [
+        "Set the rappid trigger/激活RT:"
+      ],
+      "after": [
+        "Rapid Trigger distance (mm):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/aux_display.py",
+      "before": [
+        "Synchronize the datetime/时间同步"
+      ],
+      "after": [
+        "Date and time"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/aux_display.py",
+      "before": [
+        "Sync/同步"
+      ],
+      "after": [
+        "Sync"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/aux_display.py",
+      "before": [
+        "Monochrome Screen Setting/黑白屏设置"
+      ],
+      "after": [
+        "Monochrome display"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/aux_display.py",
+      "before": [
+        "Update/更新"
+      ],
+      "after": [
+        "Update"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/aux_display.py",
+      "before": [
+        "Text Editor/文本编辑"
+      ],
+      "after": [
+        "Text editor"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/aux_display.py",
+      "before": [
+        "Select Font/选择字体"
+      ],
+      "after": [
+        "Font"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/aux_display.py",
+      "before": [
+        "Font Size/字体大小"
+      ],
+      "after": [
+        "Font size"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "Event point/触发点 1:"
+      ],
+      "after": [
+        "Event point 1:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "Event point/触发点 2:"
+      ],
+      "after": [
+        "Event point 2:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "Event point/触发点 3:"
+      ],
+      "after": [
+        "Event point 3:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "Event point/触发点 4:"
+      ],
+      "after": [
+        "Event point 4:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "DKS already set/已经设置"
+      ],
+      "after": [
+        "DKS configured"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "DKS not set/没有设置"
+      ],
+      "after": [
+        "DKS not configured"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [],
+      "after": [
+        "DKS",
+        "Switch travel and bottom-out diagram"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "The current DKS button was modified, do you want to save/当前按键已更改,是否需要保存 ?"
+      ],
+      "after": [
+        "Save changes to this DKS key?",
+        "DKS",
+        "Travel",
+        "DKS",
+        "Bottom out",
+        "DKS",
+        "Event point 1",
+        "DKS",
+        "Event point 2",
+        "DKS",
+        "Event point 3",
+        "DKS",
+        "Event point 4"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "Keycode selection/按键选择"
+      ],
+      "after": [
+        "Keycode selection"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/dks.py",
+      "before": [
+        "Only basic keycodes can be used/只有基础a按键可以在DKS中使用"
+      ],
+      "after": [
+        "DKS supports only basic keycodes."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Scan/扫描"
+      ],
+      "after": [
+        "Scan"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Stop Scan/停止扫描"
+      ],
+      "after": [
+        "Stop Scan"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Connect/连接"
+      ],
+      "after": [
+        "Connect"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Disconnect/断开连接"
+      ],
+      "after": [
+        "Disconnect"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Upload firmware/更新固件...",
+        "Abort/退出"
+      ],
+      "after": [
+        "Upload firmware",
+        "Cancel"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Need reset keyboard to use the new firmware, do you want to reset now?\n新固件需要重启键盘才能生效,现在重启?"
+      ],
+      "after": [
+        "Restart the keyboard to use the new firmware. Restart now?"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Select Firmware/选择固件"
+      ],
+      "after": [
+        "Select Firmware"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the keyboard's nkro/设置全键无冲:"
+      ],
+      "after": [
+        "N-key rollover (NKRO):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "OFF/关闭"
+      ],
+      "after": [
+        "Off"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the keyboard's poll rate/键盘回报率:"
+      ],
+      "after": [
+        "Polling rate:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Fullspeed/全速 1K Hz"
+      ],
+      "after": [
+        "1,000 Hz (full speed)"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Highspeed/高速 2K Hz"
+      ],
+      "after": [
+        "2,000 Hz (high speed)"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Highspeed/高速 4K Hz"
+      ],
+      "after": [
+        "4,000 Hz (high speed)"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Highspeed/高速 8K Hz"
+      ],
+      "after": [
+        "8,000 Hz (high speed)"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Apply && Reset/应用并重启键盘"
+      ],
+      "after": [
+        "Apply && Restart"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the debounce time(ms) when press key/按键按下时的去抖时间:"
+      ],
+      "after": [
+        "Press debounce (ms):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the debounce time(ms) when release key/按键释放时的去抖时间:"
+      ],
+      "after": [
+        "Release debounce (ms):"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Import or export keyboard config file:/磁轴配置操作"
+      ],
+      "after": [
+        "Magnetic switch configuration:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Import/导入 ..."
+      ],
+      "after": [
+        "Import…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Export/导出 ..."
+      ],
+      "after": [
+        "Export…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the magnetic pole of the switch:/设置磁轴极性"
+      ],
+      "after": [
+        "Switch polarity:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "South/南极"
+      ],
+      "after": [
+        "South"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "North/北极"
+      ],
+      "after": [
+        "North"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set keyboard's APCRT profile/设置当前APCRT的配置:"
+      ],
+      "after": [
+        "Actuation / Rapid Trigger profile:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set keyboard's DKS status/切换DKS状态:"
+      ],
+      "after": [
+        "DKS:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "ON/激活"
+      ],
+      "after": [
+        "On"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the current switch/设置当前轴体:"
+      ],
+      "after": [
+        "Switch type:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Common Switch/其它"
+      ],
+      "after": [
+        "Other switches"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Gateron Magnetic Jade/磁玉系列"
+      ],
+      "after": [
+        "Gateron Magnetic Jade"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "TTC King of Magnetic/万磁王系列"
+      ],
+      "after": [
+        "TTC King of Magnetic"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Apply/应用"
+      ],
+      "after": [
+        "Apply"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Advanced/高级选项 >>"
+      ],
+      "after": [
+        "Advanced »"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the noise sensitivity/电磁干扰灵敏度:"
+      ],
+      "after": [
+        "Electromagnetic noise sensitivity:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the apc sensitivity/APC动作灵敏度:"
+      ],
+      "after": [
+        "Actuation sensitivity:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the rt sensitivity/RT动作灵敏度:"
+      ],
+      "after": [
+        "Rapid Trigger sensitivity:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the top sensitivity/轴体顶部状态灵敏度:"
+      ],
+      "after": [
+        "Top position sensitivity:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Set the bottom sensitivity/轴体底部状态灵敏度:"
+      ],
+      "after": [
+        "Bottom position sensitivity:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Firmware/键盘固件:"
+      ],
+      "after": [
+        "Firmware"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Load/导入 ..."
+      ],
+      "after": [
+        "Load…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Check update/检查更新"
+      ],
+      "after": [
+        "Check for updates"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Password/密码:"
+      ],
+      "after": [
+        "Password"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "ON",
+        "OFF",
+        "ON",
+        "OFF"
+      ],
+      "after": [
+        "On",
+        "Off",
+        "On",
+        "Off"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Invalid firmware file./固件已损坏"
+      ],
+      "after": [
+        "Invalid firmware file."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "The firmware is not for this keyboard./固件不适合此键盘"
+      ],
+      "after": [
+        "The firmware is not for this keyboard."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Upload && Reset/更新并重启"
+      ],
+      "after": [
+        "Upload && Restart"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Apply ESP32 Command/应用ESP32指令"
+      ],
+      "after": [
+        "Apply ESP32 Command"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "ON/开启"
+      ],
+      "after": [
+        "On"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "OFF/关闭"
+      ],
+      "after": [
+        "Off"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Check update/检查更新"
+      ],
+      "after": [
+        "Check for updates"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Hide/隐藏 <<"
+      ],
+      "after": [
+        "Hide advanced «"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Advanced/高级选项 >>"
+      ],
+      "after": [
+        "Advanced »"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Invalid UF2 file size./固件已损坏"
+      ],
+      "after": [
+        "Invalid UF2 file size."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Check update/检查更新"
+      ],
+      "after": [
+        "Check for updates"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "OFF/关闭"
+      ],
+      "after": [
+        "Off"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "ON/开启"
+      ],
+      "after": [
+        "On"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "UF2 file content invalid./无效的固件"
+      ],
+      "after": [
+        "Invalid UF2 file content."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Failed to load firmware list./无法加载固件列表"
+      ],
+      "after": [
+        "Failed to load firmware list."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "The current config({}) was not for this keyboard."
+      ],
+      "after": [
+        "The configuration for {} belongs to a different keyboard."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "New firmware found.Do you want to download and update it?\n发现新固件,是否下载并更新?"
+      ],
+      "after": [
+        "New firmware is available. Download and update?"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "No new firmware available./目前已经是最新版"
+      ],
+      "after": [
+        "The firmware is up to date."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Already Latest/已经是最新版本"
+      ],
+      "after": [
+        "Up to date"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Invalid firmware./不是正确的固件"
+      ],
+      "after": [
+        "Invalid firmware."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/misc.py",
+      "before": [
+        "Failed to download firmware./无法下载固件"
+      ],
+      "after": [
+        "Failed to download firmware."
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb.py",
+      "before": [
+        "Color...",
+        "Toggle On",
+        "Toggle Dynamic",
+        "Toggle Blink",
+        "Toggle Breath"
+      ],
+      "after": [
+        "Color…",
+        "Enabled",
+        "Dynamic",
+        "Blink",
+        "Breathing"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb.py",
+      "before": [
+        "Custom Mode"
+      ],
+      "after": [
+        "Custom mode"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_config.py",
+      "before": [
+        "Custom Mode",
+        "Color...",
+        "Toggle On",
+        "Toggle Dynamic",
+        "Toggle Blink",
+        "Toggle Breath"
+      ],
+      "after": [
+        "Custom mode",
+        "Color…",
+        "Enabled",
+        "Dynamic",
+        "Blink",
+        "Breathing"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Color/颜色..."
+      ],
+      "after": [
+        "Color…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Toggle On/切换状态"
+      ],
+      "after": [
+        "Enabled"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Toggle Dynamic/切换动态效果"
+      ],
+      "after": [
+        "Dynamic"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Toggle Blink/切换闪烁效果"
+      ],
+      "after": [
+        "Blink"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Toggle Breath/切换呼吸效果"
+      ],
+      "after": [
+        "Breathing"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Bright/亮度"
+      ],
+      "after": [
+        "Brightness"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Text/文字"
+      ],
+      "after": [
+        "Text"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Typing Effect/打字特效"
+      ],
+      "after": [
+        "Typing effect"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Grids/网格:"
+      ],
+      "after": [
+        "Grids"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Effects/灯效:"
+      ],
+      "after": [
+        "Effects"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "Speed/速度"
+      ],
+      "after": [
+        "Speed"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "rotation_list"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "mode_list"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [
+        "name"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/amk/rgb_grid.py",
+      "before": [],
+      "after": [
+        "rotation_list",
+        "mode_list",
+        "name"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "Color/颜色..."
+      ],
+      "after": [
+        "Color…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "Toggle On/切换状态"
+      ],
+      "after": [
+        "Enabled"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "Toggle Dynamic/切换动态效果"
+      ],
+      "after": [
+        "Dynamic"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "Toggle Blink/切换闪烁效果"
+      ],
+      "after": [
+        "Blink"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "Toggle Breath/切换呼吸效果"
+      ],
+      "after": [
+        "Breathing"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "Indicators/指示灯:"
+      ],
+      "after": [
+        "Indicators"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "Speed/速度"
+      ],
+      "after": [
+        "Speed"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [
+        "name"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/amk/rgb_indicator.py",
+      "before": [],
+      "after": [
+        "name"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "Color/颜色..."
+      ],
+      "after": [
+        "Color…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "Toggle On/切换状态"
+      ],
+      "after": [
+        "Enabled"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "Toggle Dynamic/切换动态效果"
+      ],
+      "after": [
+        "Dynamic"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "Toggle Blink/切换闪烁效果"
+      ],
+      "after": [
+        "Blink"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "Toggle Breath/切换呼吸效果"
+      ],
+      "after": [
+        "Breathing"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "Load Animation/导入动画"
+      ],
+      "after": [
+        "Load animation…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "Speed/速度"
+      ],
+      "after": [
+        "Speed"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [
+        "effects"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/amk/rgb_matrix.py",
+      "before": [],
+      "after": [
+        "effects"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Color/颜色..."
+      ],
+      "after": [
+        "Color…"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Toggle On/切换状态"
+      ],
+      "after": [
+        "Enabled"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Toggle Dynamic/切换动态效果"
+      ],
+      "after": [
+        "Dynamic"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Toggle Blink/切换闪烁效果"
+      ],
+      "after": [
+        "Blink"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Toggle Breath/切换呼吸效果"
+      ],
+      "after": [
+        "Breathing"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Bright/亮度"
+      ],
+      "after": [
+        "Brightness"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Toggle Synchronization/切换同步状态"
+      ],
+      "after": [
+        "Synchronize"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Use Custom Color/使用自定义颜色"
+      ],
+      "after": [
+        "Custom color"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Strips/灯条:"
+      ],
+      "after": [
+        "Strips"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Effects/灯效:"
+      ],
+      "after": [
+        "Effects"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "Speed/速度"
+      ],
+      "after": [
+        "Speed"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [
+        "name"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/amk/rgb_strip.py",
+      "before": [],
+      "after": [
+        "name"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Snaptap setting/Snaptap 设置"
+      ],
+      "after": [
+        "Snap Tap configuration"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "First/第一个"
+      ],
+      "after": [
+        "First"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Second/第二个"
+      ],
+      "after": [
+        "Second"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Snaptap list/列表: "
+      ],
+      "after": [
+        "Pair:"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Depth: Activated most pressed key/激活按下最深的按键"
+      ],
+      "after": [
+        "Depth: prioritize the deeper key"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Trigger: Activated last pressed key/激活最后按下的按键"
+      ],
+      "after": [
+        "Trigger: prioritize the last key pressed"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "First: First key activated first/激活最先按下的按键"
+      ],
+      "after": [
+        "First: prioritize the first key"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Second: Second key activated first/激活第二个按下的按键"
+      ],
+      "after": [
+        "Second: prioritize the second key"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Both: Released all if both pressed/同时按下时将释放这对按键"
+      ],
+      "after": [
+        "Neutral: release both when pressed together"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Clear/清除"
+      ],
+      "after": [
+        "Clear"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Apply/应用"
+      ],
+      "after": [
+        "Apply"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "The current snap tap setting was modified, do you want to save/当前设置已经改变,是否需要保存?"
+      ],
+      "after": [
+        "Save changes to this Snap Tap pair?"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "The current snap tap setting was modified, do you want to save/当前设置已经改变，是否需要保存?"
+      ],
+      "after": [
+        "Save changes to this Snap Tap pair?"
+      ]
+    },
+    {
+      "file": "src/main/python/amk/snaptap.py",
+      "before": [
+        "Not a valid snaptap/不是有效的snaptap设置"
+      ],
+      "after": [
+        "Select two valid keys for this Snap Tap pair."
+      ]
+    },
+    {
+      "file": "src/main/python/any_keycode_dialog.py",
+      "before": [
+        "Enter an arbitrary keycode/输入任意键码"
+      ],
+      "after": [
+        "Enter Keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/any_keycode_dialog.py",
+      "before": [
+        "Enter an expression/输入表达式"
+      ],
+      "after": [
+        "Enter an expression"
+      ]
+    },
+    {
+      "file": "src/main/python/any_keycode_dialog.py",
+      "before": [
+        "Invalid input/无效输入"
+      ],
+      "after": [
+        "Invalid input"
+      ]
+    },
+    {
+      "file": "src/main/python/any_keycode_dialog.py",
+      "before": [
+        "Invalid input/无效输入: {}"
+      ],
+      "after": [
+        "Invalid input: {}"
+      ]
+    },
+    {
+      "file": "src/main/python/any_keycode_dialog.py",
+      "before": [
+        "Computed value/计算结果: 0x{:X}"
+      ],
+      "after": [
+        "Computed value: 0x{:X}"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/alt_repeat_key.py",
+      "before": [
+        "Alt key",
+        "Allowed mods"
+      ],
+      "after": [
+        "Alternate key",
+        "Allowed modifiers"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/combos.py",
+      "before": [
+        "Output key/输出键"
+      ],
+      "after": [
+        "Output key"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/combos.py",
+      "before": [
+        "组合键功能允许在同时按下多个按键(最多4个)时, 触发一个新的按键.\n例如: 按下<1>+<2>+<3>, 触发<6>.",
+        "Key/按键 {}"
+      ],
+      "after": [
+        "Press up to four keys together to send one output key.",
+        "Key {}"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Activate when the trigger key is pressed down/在触发键按下时生效"
+      ],
+      "after": [
+        "Activate when the trigger key is pressed"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Activate when a necessary modifier is pressed down/在触发修饰符按下时生效"
+      ],
+      "after": [
+        "Activate when a trigger modifier is pressed"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Activate when a negative modifier is released/在禁用修饰符未按下时才能生效"
+      ],
+      "after": [
+        "Activate when a negative modifier is released"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Activate on one modifier/触发修饰符中任意一个按下即可生效,否则需要按下所有已定义的触发修饰符才能生效"
+      ],
+      "after": [
+        "Activate with any trigger modifier"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Don't register the trigger key again after the override is deactivated/在替换按键被释放后且触发键在按下状态时,不会重新激活触发键"
+      ],
+      "after": [
+        "Do not re-register the trigger key after deactivation"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Don't deactivate when another key is pressed down/在任意键被按下的状态时，不会释放替换键"
+      ],
+      "after": [
+        "Keep the override active when another key is pressed"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Enable all/在所有层上启用"
+      ],
+      "after": [
+        "Enable all layers"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Disable all/在所有层上禁用"
+      ],
+      "after": [
+        "Disable all layers"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "按键替换功能允许在指定的激活条件下, 触发一个指定按键(替换按键)并可释放指定修饰符(无效修饰符).\n激活条件如下:1.指定按键按下(触发按键),2.指定修饰符按下(触发修饰符),3.指定修饰符处于释放状态(禁用修饰符)\n这些激活条件可由可由前4个选项控制,并且后两个选项可以控制(触发按键)和(替换按键)的特殊行为."
+      ],
+      "after": [
+        "Replace a trigger key when the required modifiers are held and negative modifiers are released.\nSuppressed modifiers are released while the replacement is active. Options control activation and release behavior."
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Enable/启用"
+      ],
+      "after": [
+        "Enable"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Enable on layers/在层上启用"
+      ],
+      "after": [
+        "Enable on layers"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Trigger/触发按键"
+      ],
+      "after": [
+        "Trigger"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Trigger mods/触发修饰符"
+      ],
+      "after": [
+        "Trigger modifiers"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Negative mods/禁用修饰符"
+      ],
+      "after": [
+        "Negative modifiers"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Suppressed mods/无效修饰符"
+      ],
+      "after": [
+        "Suppressed modifiers"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Replacement/替换按键"
+      ],
+      "after": [
+        "Replacement"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/key_override.py",
+      "before": [
+        "Options/选项"
+      ],
+      "after": [
+        "Options"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/keymap_editor.py",
+      "before": [
+        "Layer/层"
+      ],
+      "after": [
+        "Layer"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/keymap_editor.py",
+      "before": [
+        "按键设置说明:\n点击上方的层按钮可切换当前层\n确定当前层后，首先在右方选择需要设置的键位\n选择键位后，点击下方的功能键即可设置\n按键设置实时生效，无需保存\n若右侧键盘配列与实际不符,可切换到<配列>页面进行设置\n首次使用键盘时,请使用<按键测试>页面确认按键是否正常\n"
+      ],
+      "after": [
+        "Select a layer, key, and keycode.\nChanges apply immediately.",
+        "KeymapEditor",
+        "Use Layout to match your physical keyboard and Matrix Tester to check its keys."
+      ]
+    },
+    {
+      "file": "src/main/python/editor/keymap_editor.py",
+      "before": [
+        "Saved keymap belongs to a different keyboard, are you sure you want to continue?/保存的设置属于其它键盘，您确定要继续吗？"
+      ],
+      "after": [
+        "This keymap belongs to a different keyboard. Continue?"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/macro_recorder.py",
+      "before": [
+        "Save/保存"
+      ],
+      "after": [
+        "Save"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/macro_recorder.py",
+      "before": [
+        "Revert/恢复"
+      ],
+      "after": [
+        "Revert"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/macro_recorder.py",
+      "before": [
+        "Memory used by macros/宏占用的存储空间: {}/{}"
+      ],
+      "after": [
+        "Macro memory: {} / {} bytes"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/matrix_test.py",
+      "before": [
+        "Unlock/解锁",
+        "Reset/重置"
+      ],
+      "after": [
+        "Unlock",
+        "Reset"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/matrix_test.py",
+      "before": [
+        "Unlock the keyboard before testing:/测试前需要解锁键盘"
+      ],
+      "after": [
+        "Unlock the keyboard before testing:"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/qmk_settings.py",
+      "before": [
+        "Save/保存"
+      ],
+      "after": [
+        "Save"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/qmk_settings.py",
+      "before": [
+        "Undo/撤销"
+      ],
+      "after": [
+        "Undo"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/qmk_settings.py",
+      "before": [
+        "Reset/重置"
+      ],
+      "after": [
+        "Reset"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/qmk_settings.py",
+      "before": [
+        "Reset all settings to default values/重置所有设置为缺省值?"
+      ],
+      "after": [
+        "Reset all QMK settings to their defaults?"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "Underglow Effect"
+      ],
+      "after": [
+        "Underglow effect"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "Underglow Brightness"
+      ],
+      "after": [
+        "Underglow brightness"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "Underglow Color"
+      ],
+      "after": [
+        "Underglow color"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "Backlight Brightness"
+      ],
+      "after": [
+        "Backlight brightness"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "Backlight Breathing"
+      ],
+      "after": [
+        "Backlight breathing"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "RGB Effect"
+      ],
+      "after": [
+        "RGB effect"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "RGB Color"
+      ],
+      "after": [
+        "RGB color"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "RGB Brightness"
+      ],
+      "after": [
+        "RGB brightness"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/rgb_configurator.py",
+      "before": [
+        "RGB Speed"
+      ],
+      "after": [
+        "RGB speed"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/tap_dance.py",
+      "before": [
+        "On tap/单击时",
+        "On hold/按住时",
+        "On double tap/双击时",
+        "On tap + hold/单击后,再按住时",
+        "Tapping term (ms)/按下延时"
+      ],
+      "after": [
+        "On tap",
+        "On hold",
+        "On double tap",
+        "On tap + hold",
+        "Tapping term (ms)"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/tap_dance.py",
+      "before": [
+        "单颗轴的不同敲击行为可输出不同的按键.\n当前可识别<单击>,<按住>,<双击>,<单击后再按住>这四种行为,并可设置各自对应的按键.\n其中<按住>是指按下该轴超过<按下延时>."
+      ],
+      "after": [
+        "Assign separate actions for a tap, hold, double tap, or tap followed by a hold.\nThe tapping term determines when a press becomes a hold."
+      ]
+    },
+    {
+      "file": "src/main/python/editor/tap_dance.py",
+      "before": [
+        "Save/保存"
+      ],
+      "after": [
+        "Save"
+      ]
+    },
+    {
+      "file": "src/main/python/editor/tap_dance.py",
+      "before": [
+        "Revert/恢复",
+        "Use <code>TD({})</code> to set up this action in the keymap./设置完成后可在'键位'页面中选择<code>TD({})</code>"
+      ],
+      "after": [
+        "Revert",
+        "Assign <code>TD({})</code> in Keymap to use this action."
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Menu/菜单"
+      ],
+      "after": [
+        "Menu"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Control/左Control"
+      ],
+      "after": [
+        "Left Control"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Shift/左Shift"
+      ],
+      "after": [
+        "Left Shift"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Alt/Left Mac Option/左Alt"
+      ],
+      "after": [
+        "Left Alt/Left Mac Option"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Gui/Left Mac Command/左Win"
+      ],
+      "after": [
+        "Left Gui/Left Mac Command"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Control/右Control"
+      ],
+      "after": [
+        "Right Control"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Shift/右Sfhit"
+      ],
+      "after": [
+        "Right Shift"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Alt/Right Mac Option/右Alt"
+      ],
+      "after": [
+        "Right Alt/Right Mac Option"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Gui/Right Mac Command/右Win"
+      ],
+      "after": [
+        "Right Gui/Right Mac Command"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "カタカナ\nひらがな"
+      ],
+      "after": [
+        "Kana"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "変換"
+      ],
+      "after": [
+        "Henkan"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "無変換"
+      ],
+      "after": [
+        "Muhenkan"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "한영\nかな"
+      ],
+      "after": [
+        "Hangul\nKana"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "漢字\n英数"
+      ],
+      "after": [
+        "Hanja\nEisu"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Put the keyboard into bootloader mode for flashing/进入刷机模式"
+      ],
+      "after": [
+        "Put the keyboard into bootloader mode for flashing"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Reboots the keyboard. Does not load the bootloader/重启键盘"
+      ],
+      "after": [
+        "Reboots the keyboard. Does not load the bootloader"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Reinitializes the keyboard's EEPROM (persistent memory)/重置系统配置"
+      ],
+      "after": [
+        "Reinitializes the keyboard's EEPROM (persistent memory)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Shift for one keypress/按键时启用左Shift"
+      ],
+      "after": [
+        "Enable Left Shift for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control for one keypress/按键时启用左Control"
+      ],
+      "after": [
+        "Enable Left Control for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Alt for one keypress/按键时启用左Alt"
+      ],
+      "after": [
+        "Enable Left Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left GUI for one keypress/按键时启用左Win"
+      ],
+      "after": [
+        "Enable Left GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Shift for one keypress/按键时启用右Shift"
+      ],
+      "after": [
+        "Enable Right Shift for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control for one keypress/按键时启用右Control"
+      ],
+      "after": [
+        "Enable Right Control for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Alt for one keypress/按键时启用右Alt"
+      ],
+      "after": [
+        "Enable Right Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right GUI for one keypress/按键时启用右Win"
+      ],
+      "after": [
+        "Enable Right GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control and Shift for one keypress/按键时启用左Control和Shift"
+      ],
+      "after": [
+        "Enable Left Control and Shift for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control and Alt for one keypress/按键时启用左Control和Alt"
+      ],
+      "after": [
+        "Enable Left Control and Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control and GUI for one keypress/按键时启用左Control和Win"
+      ],
+      "after": [
+        "Enable Left Control and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Shift and Alt for one keypress/按键时启用左Shift和Alt"
+      ],
+      "after": [
+        "Enable Left Shift and Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Shift and GUI for one keypress/按键时启用左Shift和Win"
+      ],
+      "after": [
+        "Enable Left Shift and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Alt and GUI for one keypress/按键时启用左Alt和Win"
+      ],
+      "after": [
+        "Enable Left Alt and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control and Shift for one keypress/按键时启用右Control和Shift"
+      ],
+      "after": [
+        "Enable Right Control and Shift for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control and Alt for one keypress/按键时启用右Control和Alt"
+      ],
+      "after": [
+        "Enable Right Control and Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control and GUI for one keypress/按键时启用右Control和Win"
+      ],
+      "after": [
+        "Enable Right Control and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Shift and Alt for one keypress/按键时启用右Shift和Alt"
+      ],
+      "after": [
+        "Enable Right Shift and Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Shift and GUI for one keypress/按键时启用右Shift和Win"
+      ],
+      "after": [
+        "Enable Right Shift and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Alt and GUI for one keypress/按键时启用右Alt和Win"
+      ],
+      "after": [
+        "Enable Right Alt and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control, Shift, and GUI for one keypress/按键时启用左Control、Shift和Win"
+      ],
+      "after": [
+        "Enable Left Control, Shift, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control, Alt, and GUI for one keypress/按键时启用左Control、Alt和Win"
+      ],
+      "after": [
+        "Enable Left Control, Alt, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Shift, Alt, and GUI for one keypress/按键时启用左Shift、Alt和Win"
+      ],
+      "after": [
+        "Enable Left Shift, Alt, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control, Shift, and GUI for one keypress/按键时启用右Control、Shift和Win"
+      ],
+      "after": [
+        "Enable Right Control, Shift, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control, Alt, and GUI for one keypress/按键时启用右Control、Alt和Win"
+      ],
+      "after": [
+        "Enable Right Control, Alt, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Shift, Alt, and GUI for one keypress/按键时启用右Shift、Alt和Win"
+      ],
+      "after": [
+        "Enable Right Shift, Alt, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control, Shift, and Alt for one keypress/按键时启用左Control、Shift和Alt"
+      ],
+      "after": [
+        "Enable Left Control, Shift, and Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Left Control, Shift, Alt, and GUI for one keypress/按键时启用左Control、Shift、Alt和Win"
+      ],
+      "after": [
+        "Enable Left Control, Shift, Alt, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control, Shift, and Alt for one keypress/按键时启用右Control、Shift和Alt"
+      ],
+      "after": [
+        "Enable Right Control, Shift, and Alt for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable Right Control, Shift, Alt, and GUI for one keypress/按键时启用右Control、Shift、Alt和Win"
+      ],
+      "after": [
+        "Enable Right Control, Shift, Alt, and GUI for one keypress"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Shift with keycode/按键组合左Shift"
+      ],
+      "after": [
+        "Left Shift with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Ctrl with keycode/按键组合左Control"
+      ],
+      "after": [
+        "Left Ctrl with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Alt with keycode/按键组合左Alt"
+      ],
+      "after": [
+        "Left Alt with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Gui with keycode/按键组合左Win"
+      ],
+      "after": [
+        "Left Gui with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Shift with keycode/按键组合右Shift"
+      ],
+      "after": [
+        "Right Shift with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Ctrl with keycode/按键组合右Control"
+      ],
+      "after": [
+        "Right Ctrl with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Alt with keycode/按键组合右Alt"
+      ],
+      "after": [
+        "Right Alt with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Gui with keycode/按键组合右Win"
+      ],
+      "after": [
+        "Right Gui with keycode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LSFT/按键组合左Control和Shift"
+      ],
+      "after": [
+        "LCTL + LSFT"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LALT/按键组合左Control和Alt"
+      ],
+      "after": [
+        "LCTL + LALT"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LGUI/按键组合左Control和Win"
+      ],
+      "after": [
+        "LCTL + LGUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LSFT + LALT/按键组合左Shift和Alt"
+      ],
+      "after": [
+        "LSFT + LALT"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LALT + LGUI/按键组合左Alt和Win"
+      ],
+      "after": [
+        "LALT + LGUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LGUI + LSFT/按键组合左Win和Shift"
+      ],
+      "after": [
+        "LGUI + LSFT"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LALT + LGUI/按键组合左Control,Alt和Win"
+      ],
+      "after": [
+        "LCTL + LALT + LGUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "RCTL + RGUI/按键组合右Control和Win"
+      ],
+      "after": [
+        "RCTL + RGUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LSFT + LALT/按键组合左Control,Shift和Alt"
+      ],
+      "after": [
+        "LCTL + LSFT + LALT"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LSFT + LALT + LGUI/按键组合左Control,Shift,Alt,Win"
+      ],
+      "after": [
+        "LCTL + LSFT + LALT + LGUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Shift when held, kc when tapped/长按激活左Shift,短按激活按键"
+      ],
+      "after": [
+        "Left Shift when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Control when held, kc when tapped/长按激活左Contro,短按激活按键"
+      ],
+      "after": [
+        "Left Control when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Alt when held, kc when tapped/长按激活左Alt,短按激活按键"
+      ],
+      "after": [
+        "Left Alt when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left GUI when held, kc when tapped/长按激活左Win,短按激活按键"
+      ],
+      "after": [
+        "Left GUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Shift when held, kc when tapped/长按激活右Shift,短按激活按键"
+      ],
+      "after": [
+        "Right Shift when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Control when held, kc when tapped/长按激活右Control,短按激活按键"
+      ],
+      "after": [
+        "Right Control when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Alt when held, kc when tapped/长按激活右Alt,短按激活按键"
+      ],
+      "after": [
+        "Right Alt when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right GUI when held, kc when tapped/长按激活右Win,短按激活按键"
+      ],
+      "after": [
+        "Right GUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Control + Left Shift when held, kc when tapped/长按激活左Control和Shift,短按激活按键"
+      ],
+      "after": [
+        "Left Control + Left Shift when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LALT when held, kc when tapped/长按激活左Control和Alt,短按激活按键"
+      ],
+      "after": [
+        "LCTL + LALT when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LGUI when held, kc when tapped/长按激活左Control和Win,短按激活按键"
+      ],
+      "after": [
+        "LCTL + LGUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LSFT + LALT when held, kc when tapped/长按激活左Shift和Alt,短按激活按键"
+      ],
+      "after": [
+        "LSFT + LALT when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LALT + LGUI when held, kc when tapped/长按激活左Alt和Win,短按激活按键"
+      ],
+      "after": [
+        "LALT + LGUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LGUI + LSFT when held, kc when tapped/长按激活左Win和Shift,短按激活按键"
+      ],
+      "after": [
+        "LGUI + LSFT when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LALT + LGUI when held, kc when tapped/长按激活左Control,Alt和Win,短按激活按键"
+      ],
+      "after": [
+        "LCTL + LALT + LGUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "RCTL + RGUI when held, kc when tapped/长按激活右Control和Win,短按激活按键"
+      ],
+      "after": [
+        "RCTL + RGUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "RCTL + RALT + RGUI when held, kc when tapped/长按激活右Control,Alt和Win,短按激活按键"
+      ],
+      "after": [
+        "RCTL + RALT + RGUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LSFT + LALT when held, kc when tapped/长按激活左Control,Shift和Alt,短按激活按键"
+      ],
+      "after": [
+        "LCTL + LSFT + LALT when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "LCTL + LSFT + LALT + LGUI when held, kc when tapped/长按激活左Control,Shift,Alt和Win,短按激活按键"
+      ],
+      "after": [
+        "LCTL + LSFT + LALT + LGUI when held, kc when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Esc normally, but ~ when Shift or GUI is pressed/同时按下Shift或Win时输出~,其它情况为Esc"
+      ],
+      "after": [
+        "Esc normally, but ~ when Shift or GUI is pressed"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Shift when held, ( when tapped/长按激活左Shift,短按输出 ("
+      ],
+      "after": [
+        "Left Shift when held, ( when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Shift when held, ) when tapped/长按激活右Shift,短按输出 )"
+      ],
+      "after": [
+        "Right Shift when held, ) when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Control when held, ( when tapped/长按激活左Control,短按输出 ("
+      ],
+      "after": [
+        "Left Control when held, ( when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Control when held, ) when tapped/长按激活右Control,短按输出 )"
+      ],
+      "after": [
+        "Right Control when held, ) when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Left Alt when held, ( when tapped/长按激活左Alt,短按输出 ("
+      ],
+      "after": [
+        "Left Alt when held, ( when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Alt when held, ) when tapped/长按激活右Alt,短按输出 )"
+      ],
+      "after": [
+        "Right Alt when held, ) when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Right Shift when held, Enter when tapped/长按激活右Shift,短按输出Enter"
+      ],
+      "after": [
+        "Right Shift when held, Enter when tapped"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap Caps Lock and Left Control/交换Caps Lock和左Control"
+      ],
+      "after": [
+        "Swap Caps Lock and Left Control"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap Caps Lock and Left Control/恢复Caps Lock和左Control"
+      ],
+      "after": [
+        "Unswap Caps Lock and Left Control"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Treat Caps Lock as Control/替换Caps Lock为Control"
+      ],
+      "after": [
+        "Treat Caps Lock as Control"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Stop treating Caps Lock as Control/恢复Caps Lock"
+      ],
+      "after": [
+        "Stop treating Caps Lock as Control"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap Left Control and GUI/交换左Control和Win"
+      ],
+      "after": [
+        "Swap Left Control and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap Left Control and GUI/恢复左Control和Win"
+      ],
+      "after": [
+        "Unswap Left Control and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap Right Control and GUI/交换右Control和Win"
+      ],
+      "after": [
+        "Swap Right Control and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap Right Control and GUI/恢复右Control和Win"
+      ],
+      "after": [
+        "Unswap Right Control and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap Control and GUI on both sides/交换左右两边的Control和Win"
+      ],
+      "after": [
+        "Swap Control and GUI on both sides"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap Control and GUI on both sides/恢复左右两边的Control和Win"
+      ],
+      "after": [
+        "Unswap Control and GUI on both sides"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggle Control and GUI swap on both sides/切换左右两边的Control和Win"
+      ],
+      "after": [
+        "Toggle Control and GUI swap on both sides"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap Left Alt and GUI/交换左Alt和Win"
+      ],
+      "after": [
+        "Swap Left Alt and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap Left Alt and GUI/恢复左Alt和Win"
+      ],
+      "after": [
+        "Unswap Left Alt and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap Right Alt and GUI/交换右Alt和Win"
+      ],
+      "after": [
+        "Swap Right Alt and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap Right Alt and GUI/恢复右Alt和Win"
+      ],
+      "after": [
+        "Unswap Right Alt and GUI"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap Alt and GUI on both sides/交换左右两边的Alt和Win"
+      ],
+      "after": [
+        "Swap Alt and GUI on both sides"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap Alt and GUI on both sides/恢复左右两边的Alt和Win"
+      ],
+      "after": [
+        "Unswap Alt and GUI on both sides"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggle Alt and GUI swap on both sides/切换左右两边的Alt和Win"
+      ],
+      "after": [
+        "Toggle Alt and GUI swap on both sides"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Disable the GUI keys/锁住Win"
+      ],
+      "after": [
+        "Disable the GUI keys"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable the GUI keys/恢复Win"
+      ],
+      "after": [
+        "Enable the GUI keys"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggle the GUI keys on and off/切换Win"
+      ],
+      "after": [
+        "Toggle the GUI keys on and off"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap ` and Escape/交换 ` 和Esc"
+      ],
+      "after": [
+        "Swap ` and Escape"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap ` and Escape/恢复 ` 和Esc"
+      ],
+      "after": [
+        "Unswap ` and Escape"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Swap \\ and Backspace/交换 \\ 和Backspace"
+      ],
+      "after": [
+        "Swap \\ and Backspace"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Unswap \\ and Backspace/恢复 \\ 和Backspce"
+      ],
+      "after": [
+        "Unswap \\ and Backspace"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Enable N-key rollover/开启全键无冲"
+      ],
+      "after": [
+        "Enable N-key rollover"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Disable N-key rollover/关闭全键无冲"
+      ],
+      "after": [
+        "Disable N-key rollover"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggle N-key rollover/切换全键无冲"
+      ],
+      "after": [
+        "Toggle N-key rollover"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Lower the Auto Shift timeout variable (down)/降低Auto Shift延时"
+      ],
+      "after": [
+        "Lower the Auto Shift timeout variable (down)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Raise the Auto Shift timeout variable (up)/提高Auto Shift延时"
+      ],
+      "after": [
+        "Raise the Auto Shift timeout variable (up)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Report your current Auto Shift timeout value/报告当前Auto Shift延时"
+      ],
+      "after": [
+        "Report your current Auto Shift timeout value"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Turns on the Auto Shift Function/开启Auto Shift"
+      ],
+      "after": [
+        "Turns on the Auto Shift Function"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Turns off the Auto Shift Function/关闭Auto Shift"
+      ],
+      "after": [
+        "Turns off the Auto Shift Function"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggles the state of the Auto Shift feature/切换Auto Shift"
+      ],
+      "after": [
+        "Toggles the state of the Auto Shift feature"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Turns on Combo feature/打开Combo功能"
+      ],
+      "after": [
+        "Turns on Combo feature"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Turns off Combo feature/关闭Combo功能"
+      ],
+      "after": [
+        "Turns off Combo feature"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggles Combo feature on and off/切换Combo功能"
+      ],
+      "after": [
+        "Toggles Combo feature on and off"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggle RGB lighting on or off/切换RGB开关"
+      ],
+      "after": [
+        "Toggle RGB lighting on or off"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Next RGB mode/下一个RGB模式"
+      ],
+      "after": [
+        "Next RGB mode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Previous RGB mode/上一个RGB模式"
+      ],
+      "after": [
+        "Previous RGB mode"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase hue/增加色调"
+      ],
+      "after": [
+        "Increase hue"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease hue/减少色调"
+      ],
+      "after": [
+        "Decrease hue"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase saturation/增加饱和度"
+      ],
+      "after": [
+        "Increase saturation"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease saturation/减少饱和度"
+      ],
+      "after": [
+        "Decrease saturation"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase value/增加亮度"
+      ],
+      "after": [
+        "Increase value"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease value/降低亮度"
+      ],
+      "after": [
+        "Decrease value"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase RGB effect speed/增加RGB效果速度"
+      ],
+      "after": [
+        "Increase RGB effect speed"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease RGB effect speed/降低RGB效果速度"
+      ],
+      "after": [
+        "Decrease RGB effect speed"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Turn on RGB Matrix/打开RGB轴灯"
+      ],
+      "after": [
+        "Turn on RGB Matrix"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Turn off RGB Matrix/关闭RGB轴灯"
+      ],
+      "after": [
+        "Turn off RGB Matrix"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggle RGB Matrix on or off/切换RGB轴灯开关"
+      ],
+      "after": [
+        "Toggle RGB Matrix on or off"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Cycle through animations/下一个RGB轴灯模式"
+      ],
+      "after": [
+        "Cycle through animations"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Cycle through animations in reverse/上一个RGB轴灯模式"
+      ],
+      "after": [
+        "Cycle through animations in reverse"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Cycle through hue/增加色调"
+      ],
+      "after": [
+        "Cycle through hue"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Cycle through hue in reverse/减少色调"
+      ],
+      "after": [
+        "Cycle through hue in reverse"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase the saturation/增加饱和度"
+      ],
+      "after": [
+        "Increase the saturation"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease the saturation/减少饱和度"
+      ],
+      "after": [
+        "Decrease the saturation"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase the brightness level/增加亮度"
+      ],
+      "after": [
+        "Increase the brightness level"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease the brightness level/减少亮度"
+      ],
+      "after": [
+        "Decrease the brightness level"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase the animation speed/增加速度"
+      ],
+      "after": [
+        "Increase the animation speed"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease the animation speed/降低速度"
+      ],
+      "after": [
+        "Decrease the animation speed"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "System Power Down/关机"
+      ],
+      "after": [
+        "System Power Down"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "System Sleep/休眠"
+      ],
+      "after": [
+        "System Sleep"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "System Wake/唤醒"
+      ],
+      "after": [
+        "System Wake"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Execute/执行"
+      ],
+      "after": [
+        "Execute"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Launch Calculator (Windows)/打开计算器"
+      ],
+      "after": [
+        "Launch Calculator (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Launch Mail (Windows)/打开邮件"
+      ],
+      "after": [
+        "Launch Mail (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Launch Media Player (Windows)/打开播放器"
+      ],
+      "after": [
+        "Launch Media Player (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Launch My Computer (Windows)/打开我的电脑"
+      ],
+      "after": [
+        "Launch My Computer (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Browser Search (Windows)/浏览器搜索"
+      ],
+      "after": [
+        "Browser Search (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Browser Home (Windows)/浏览器主页"
+      ],
+      "after": [
+        "Browser Home (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Browser Back (Windows)/浏览器后退"
+      ],
+      "after": [
+        "Browser Back (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Browser Forward (Windows)/浏览器前进"
+      ],
+      "after": [
+        "Browser Forward (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Browser Stop (Windows)/浏览器暂停"
+      ],
+      "after": [
+        "Browser Stop (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Browser Refresh (Windows)/浏览器刷新"
+      ],
+      "after": [
+        "Browser Refresh (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Browser Favorites (Windows)/浏览器收藏栏"
+      ],
+      "after": [
+        "Browser Favorites (Windows)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Increase the brightness of screen (Laptop)/增加屏幕亮度"
+      ],
+      "after": [
+        "Increase the brightness of screen (Laptop)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Decrease the brightness of screen (Laptop)/减少屏幕亮度"
+      ],
+      "after": [
+        "Decrease the brightness of screen (Laptop)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Previous Track/上一首"
+      ],
+      "after": [
+        "Previous Track"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Next Track/下一首"
+      ],
+      "after": [
+        "Next Track"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mute Audio/静音"
+      ],
+      "after": [
+        "Mute Audio"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Volume Down/减少音量"
+      ],
+      "after": [
+        "Volume Down"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Volume Up/增加音量"
+      ],
+      "after": [
+        "Volume Up"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Volume Down Alternate/减少音量"
+      ],
+      "after": [
+        "Volume Down Alternate"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Volume Up Alternate/增加音量"
+      ],
+      "after": [
+        "Volume Up Alternate"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "播放停止"
+      ],
+      "after": [
+        "Stop playback"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Play/Pause/切换播放暂停"
+      ],
+      "after": [
+        "Play/Pause"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Previous Track / Rewind (macOS)/上一首"
+      ],
+      "after": [
+        "Previous Track / Rewind (macOS)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Next Track / Fast Forward (macOS)/下一首"
+      ],
+      "after": [
+        "Next Track / Fast Forward (macOS)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Eject (macOS)/推出"
+      ],
+      "after": [
+        "Eject (macOS)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Cursor Up/鼠标向上"
+      ],
+      "after": [
+        "Mouse Cursor Up"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Cursor Down/鼠标向下"
+      ],
+      "after": [
+        "Mouse Cursor Down"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Cursor Left/鼠标向左"
+      ],
+      "after": [
+        "Mouse Cursor Left"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Cursor Right/鼠标向右"
+      ],
+      "after": [
+        "Mouse Cursor Right"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Button 1/鼠标按键1号"
+      ],
+      "after": [
+        "Mouse Button 1"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Button 2/鼠标按键2号"
+      ],
+      "after": [
+        "Mouse Button 2"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Button 3/鼠标按键3号"
+      ],
+      "after": [
+        "Mouse Button 3"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Button 4/鼠标按键4号"
+      ],
+      "after": [
+        "Mouse Button 4"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Mouse Button 5/鼠标按键5号"
+      ],
+      "after": [
+        "Mouse Button 5"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Wheel Up/鼠标滚轮向上"
+      ],
+      "after": [
+        "Wheel Up"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Wheel Down/鼠标滚轮向下"
+      ],
+      "after": [
+        "Wheel Down"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Wheel Left/鼠标滚轮向左"
+      ],
+      "after": [
+        "Wheel Left"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "wheel Right/鼠标滚轮向右"
+      ],
+      "after": [
+        "wheel Right"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Set mouse acceleration to 0/设置鼠标加速为0"
+      ],
+      "after": [
+        "Set mouse acceleration to 0"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Set mouse acceleration to 1/设置鼠标加速为1"
+      ],
+      "after": [
+        "Set mouse acceleration to 1"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Set mouse acceleration to 2/数值鼠标加速为2"
+      ],
+      "after": [
+        "Set mouse acceleration to 2"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Locking Caps Lock/锁定Caps Lock"
+      ],
+      "after": [
+        "Locking Caps Lock"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Locking Num Lock/锁定Num Lock"
+      ],
+      "after": [
+        "Locking Num Lock"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Locking Scroll Lock/锁定Scroll Lock"
+      ],
+      "after": [
+        "Locking Scroll Lock"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Dynamic Macro 1 Rec Start/开始录制1号动态宏"
+      ],
+      "after": [
+        "Dynamic Macro 1 Rec Start"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Dynamic Macro 2 Rec Start/开始录制2号动态宏"
+      ],
+      "after": [
+        "Dynamic Macro 2 Rec Start"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Dynamic Macro Rec Stop/停止录制宏"
+      ],
+      "after": [
+        "Dynamic Macro Rec Stop"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Dynamic Macro 1 Play/激活1号动态宏"
+      ],
+      "after": [
+        "Dynamic Macro 1 Play"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Dynamic Macro 2 Play/激活2号动态宏"
+      ],
+      "after": [
+        "Dynamic Macro 2 Play"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Momentarily turn on layer when pressed (requires KC_TRNS on destination layer)/长按开启层"
+      ],
+      "after": [
+        "Momentarily turn on layer when pressed (requires KC_TRNS on destination layer)"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Set the base (default) layer/设置缺省层"
+      ],
+      "after": [
+        "Set the base (default) layer"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Toggle layer on or off/打开或者关闭层"
+      ],
+      "after": [
+        "Toggle layer on or off"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Normally acts like MO unless it's tapped multiple times, which toggles layer on/长按开启层,多次短按会激活该层"
+      ],
+      "after": [
+        "Normally acts like MO unless it's tapped multiple times, which toggles layer on"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Momentarily activates layer until a key is pressed/激活该层直到下一个按键按下"
+      ],
+      "after": [
+        "Momentarily activates layer until a key is pressed"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "Turns on layer and turns off all other layers, except the default layer/激活该层并关闭除了缺省层外的所有其他层"
+      ],
+      "after": [
+        "Turns on layer and turns off all other layers, except the default layer"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "shortName",
+        "title"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [],
+      "after": [
+        "shortName",
+        "title"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "kc on tap, switch to layer {} while held/长按开启层,短按激活按键"
+      ],
+      "after": [
+        "kc on tap, switch to layer {} while held"
+      ]
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [
+        "USER{:02}",
+        "USER{:02}"
+      ],
+      "after": []
+    },
+    {
+      "file": "src/main/python/keycodes/keycodes.py",
+      "before": [],
+      "after": [
+        "USER{:02}",
+        "USER{:02}"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_line.py",
+      "before": [
+        "Text/文本",
+        "Down/按下",
+        "Up/释放",
+        "Tap/单击"
+      ],
+      "after": [
+        "Text",
+        "Down",
+        "Up",
+        "Tap"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_line.py",
+      "before": [
+        "Delay (ms)/延时(毫秒)"
+      ],
+      "after": [
+        "Delay (ms)"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_recorder_windows.py",
+      "before": [
+        "Stop recording/停止录制"
+      ],
+      "after": [
+        "Stop recording"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Record macro/开始录制"
+      ],
+      "after": [
+        "Record macro"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Stop recording/停止录制"
+      ],
+      "after": [
+        "Stop recording"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Add action/添加动作"
+      ],
+      "after": [
+        "Add action"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Tap Enter/点击回车"
+      ],
+      "after": [
+        "Tap Enter"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Open Text Editor/打开文本编辑器..."
+      ],
+      "after": [
+        "Text editor"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Apply macro/应用宏"
+      ],
+      "after": [
+        "Apply macro"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Invalid macro, please check the format/无效的宏,请检查格式"
+      ],
+      "after": [
+        "Invalid macro. Check its format."
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Append to current/添加"
+      ],
+      "after": [
+        "Append to current"
+      ]
+    },
+    {
+      "file": "src/main/python/macro/macro_tab.py",
+      "before": [
+        "Replace everything/替换"
+      ],
+      "after": [
+        "Replace everything"
+      ]
+    },
+    {
+      "file": "src/main/python/main_window.py",
+      "before": [
+        "No devices detected. Connect a Vial-compatible device and press \"Refresh\"<br>or select \"File\" → \"Download VIA definitions\" in order to enable support for VIA keyboards.<br>未检测到兼容键盘，请连接一个兼容的键盘并点击\"刷新\""
+      ],
+      "after": [
+        "No compatible keyboard detected. Connect a Vial keyboard and click Refresh.<br>For VIA keyboards, choose File → Download VIA definitions."
+      ]
+    },
+    {
+      "file": "src/main/python/main_window.py",
+      "before": [
+        "Refresh/刷新",
+        "Keymap/键位",
+        "Layout/配列",
+        "Matrix tester/按键测试",
+        "Macros/按键宏",
+        "RGB Strips/灯条",
+        "RGB Grids/灯阵",
+        "RGB Matrix/轴灯",
+        "RGB Indicator/指示灯",
+        "Key Calibrate/按键校准",
+        "APC/RT/按键行程和快速触发",
+        "DKS Settings/DKS设置",
+        "Snap Tap Settings/SnapTap设置",
+        "Misc settings/其它设置",
+        "Auxiliary Display/辅助屏幕",
+        "Animations/屏幕动画",
+        "RGB Config/配置",
+        "QMK Settings/QMK设置",
+        "Tap Dance/高级按键",
+        "Combos/组合键",
+        "Key Overrides/按键改写",
+        "Alt Repeat Key/按键重复",
+        "Lighting/灯光",
+        "Firmware updater/固件更新"
+      ],
+      "after": [
+        "Refresh",
+        "Keymap",
+        "Layout",
+        "Matrix Tester",
+        "Macros",
+        "RGB Strips",
+        "RGB Grids",
+        "RGB Matrix",
+        "RGB Indicators",
+        "Calibration",
+        "APC/RT",
+        "DKS",
+        "Snap Tap",
+        "General",
+        "Auxiliary Display",
+        "Animations",
+        "RGB Configuration",
+        "QMK Settings",
+        "Tap Dance",
+        "Combos",
+        "Key Overrides",
+        "Alt Repeat Key",
+        "Lighting",
+        "Firmware Updater"
+      ]
+    },
+    {
+      "file": "src/main/python/main_window.py",
+      "before": [
+        "In order to fully apply the theme you should restart the application."
+      ],
+      "after": [
+        "Restart the application to fully apply the theme."
+      ]
+    },
+    {
+      "file": "src/main/python/main_window.py",
+      "before": [
+        "Unsupported protocol version!/键盘协议不兼容\nPlease download latest Vial from https://get.vial.today/"
+      ],
+      "after": [
+        "Unsupported keyboard protocol version.\nUse a Vial Astro client compatible with this keyboard firmware."
+      ]
+    },
+    {
+      "file": "src/main/python/tabbed_keycodes.py",
+      "before": [
+        "Basic/基础",
+        "ISO/JIS/欧标/日本",
+        "Layers/键位层",
+        "Quantum/QMK按键",
+        "Backlight/RGB灯设置",
+        "App, Media and Mouse/应用,媒体和鼠标键"
+      ],
+      "after": [
+        "",
+        "Basic",
+        "ISO/JIS",
+        "Layers",
+        "Quantum",
+        "Backlight",
+        "Media & Mouse"
+      ]
+    },
+    {
+      "file": "src/main/python/tabbed_keycodes.py",
+      "before": [
+        "Tap Dance/高级按键",
+        "User/自定义按键",
+        "Macro/按键宏",
+        "TabbedKeycodes",
+        "Description"
+      ],
+      "after": [
+        "Tap Dance",
+        "User",
+        "Macro"
+      ]
+    },
+    {
+      "file": "src/main/python/textbox_window.py",
+      "before": [
+        "Apply/应用"
+      ],
+      "after": [
+        "Apply"
+      ]
+    },
+    {
+      "file": "src/main/python/textbox_window.py",
+      "before": [
+        "Cancel/取消"
+      ],
+      "after": [
+        "Cancel"
+      ]
+    },
+    {
+      "file": "src/main/python/textbox_window.py",
+      "before": [
+        "Copy/复制"
+      ],
+      "after": [
+        "Copy"
+      ]
+    },
+    {
+      "file": "src/main/python/textbox_window.py",
+      "before": [
+        "Paste/粘贴"
+      ],
+      "after": [
+        "Paste"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Swap Caps Lock and Left Control/交换Caps Lock和左Control"
+      ],
+      "after": [
+        "Swap Caps Lock and Left Control"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Treat Caps Lock as Control/将Caps Lock作为Control使用"
+      ],
+      "after": [
+        "Treat Caps Lock as Control"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Swap Left Alt and GUI/交换左Alt和Win"
+      ],
+      "after": [
+        "Swap Left Alt and GUI"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Swap Right Alt and GUI/交换右Alt和Win"
+      ],
+      "after": [
+        "Swap Right Alt and GUI"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Disable the GUI keys/禁用Win键"
+      ],
+      "after": [
+        "Disable the GUI keys"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Swap ` and Escape/交换 ` 和Esc"
+      ],
+      "after": [
+        "Swap ` and Escape"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Swap \\ and Backspace/交换 \\ 和Backspace"
+      ],
+      "after": [
+        "Swap \\ and Backspace"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Enable N-key rollover/开启全键无冲"
+      ],
+      "after": [
+        "Enable N-key rollover"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Swap Left Control and GUI/交换左Control和Win"
+      ],
+      "after": [
+        "Swap Left Control and GUI"
+      ]
+    },
+    {
+      "file": "src/main/resources/base/qmk_settings.json",
+      "before": [
+        "Swap Right Control and GUI/交换右Control和Win"
+      ],
+      "after": [
+        "Swap Right Control and GUI"
+      ]
+    }
+  ]
+}

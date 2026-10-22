@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 from PyQt5.QtWidgets import QVBoxLayout, QPushButton, QHBoxLayout, QGridLayout, QLabel, QCheckBox, QMessageBox
 from PyQt5.QtCore import QSize, Qt, QRect
-from PyQt5.QtGui import QPalette, QPainter, QBrush, QPixmap, QImage
+from PyQt5.QtGui import QPalette, QPainter, QBrush, QPixmap, QImage, QColor
 from PyQt5.QtWidgets import QApplication
 
 from themes import Theme
@@ -17,11 +17,11 @@ from amk.protocol import DksKey
 def dks_display(widget, dks):
     if dks.is_valid():
         widget.setText("\u21DF\u21DE")
-        widget.setToolTip(tr("DKS", "DKS already set/已经设置"))
+        widget.setToolTip(tr("DKS", "DKS configured"))
         widget.setColor(QApplication.palette().color(QPalette.Link))
     else:
         widget.setText("")
-        widget.setToolTip(tr("DKS", "DKS not set/没有设置"))
+        widget.setToolTip(tr("DKS", "DKS not configured"))
         widget.setColor(None)
 
 class DksButton(QPushButton):
@@ -175,8 +175,8 @@ class DksCheckBox(QCheckBox):
     def get_index(self):
         return self.index
 
-DKS_TRIGGER_LABELS = [tr("DKS", "Event point/触发点 1:"), tr("DKS", "Event point/触发点 2:"), 
-                tr("DKS", "Event point/触发点 3:"), tr("DKS", "Event point/触发点 4:")]
+DKS_TRIGGER_LABELS = [tr("DKS", "Event point 1:"), tr("DKS", "Event point 2:"),
+                tr("DKS", "Event point 3:"), tr("DKS", "Event point 4:")]
 
 DKS_KEY_EVENT_LABELS = [tr("DKS", "\u21A7"), tr("DKS", "\u21A5")]
 
@@ -193,6 +193,27 @@ class Dks(BasicEditor):
 
         self.dks_lbl = QLabel()
         self.dks_img = QImage(appctx.get_resource("dks.png"))
+        # The original artwork embeds bilingual captions. Render English at the
+        # same positions, preserving transparency, arrows and button alignment.
+        painter = QPainter(self.dks_img)
+        caption_font = painter.font()
+        caption_font.setPixelSize(68)
+        caption_font.setBold(True)
+        painter.setFont(caption_font)
+        for rect, caption, background in [
+                (QRect(700, 1015, 540, 155), tr("DKS", "Travel"), Qt.transparent),
+                (QRect(700, 1500, 550, 75), tr("DKS", "Bottom out"), Qt.transparent),
+                (QRect(50, 860, 510, 210), tr("DKS", "Event point 1"), QColor(255, 255, 255, 51)),
+                (QRect(50, 1175, 510, 210), tr("DKS", "Event point 2"), QColor(255, 255, 255, 51)),
+                (QRect(1410, 1175, 515, 210), tr("DKS", "Event point 3"), QColor(255, 255, 255, 51)),
+                (QRect(1410, 860, 515, 210), tr("DKS", "Event point 4"), QColor(255, 255, 255, 51))]:
+            painter.setCompositionMode(QPainter.CompositionMode_Source)
+            painter.fillRect(rect, background)
+            painter.setCompositionMode(QPainter.CompositionMode_SourceOver)
+            painter.setPen(Qt.white)
+            painter.drawText(rect, Qt.AlignCenter, caption)
+        painter.end()
+        self.dks_lbl.setAccessibleDescription(tr("DKS", "Switch travel and bottom-out diagram"))
         pixmap = QPixmap.fromImage(self.dks_img)
         pixmap = pixmap.scaled(500, 500, aspectRatioMode=Qt.KeepAspectRatio)
         self.dks_lbl.setPixmap(pixmap)
@@ -380,7 +401,7 @@ class Dks(BasicEditor):
 
     def save_or_discard(self, dks):
         button = QMessageBox.warning(None, tr("DKS", "DKS button"),
-                                    tr("DKS", "The current DKS button was modified, do you want to save/当前按键已更改,是否需要保存 ?"),
+                                    tr("DKS", "Save changes to this DKS key?"),
                                     buttons=QMessageBox.Save | QMessageBox.Discard,
                                     defaultButton=QMessageBox.Save)
         if button == QMessageBox.Save:
@@ -422,8 +443,8 @@ class Dks(BasicEditor):
         if self.active_dks_btn is not None:
             if self.active_dks_btn.is_mask_selected():
                 if Keycode.is_mask(code):
-                    QMessageBox.warning(None, tr("DKS", "Keycode selection/按键选择"),
-                                tr("DKS", "Only basic keycodes can be used/只有基础a按键可以在DKS中使用"),
+                    QMessageBox.warning(None, tr("DKS", "Keycode selection"),
+                                tr("DKS", "DKS supports only basic keycodes."),
                                 buttons=QMessageBox.Ok)
                     return
                 index = self.active_dks_btn.get_index()

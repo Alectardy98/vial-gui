@@ -119,30 +119,30 @@ class AuxDsiplay(BasicEditor):
 
         line = 0
 
-        self.dt_lbl = QLabel(tr("AuxDisplay", "Synchronize the datetime/时间同步"))
+        self.dt_lbl = QLabel(tr("AuxDisplay", "Date and time"))
 
         g_layout.addWidget(self.dt_lbl, line, 0)
-        self.dt_btn = QPushButton(tr("AuxDisplay", "Sync/同步"))
+        self.dt_btn = QPushButton(tr("AuxDisplay", "Sync"))
         self.dt_btn.clicked.connect(self.on_dt_btn)
         g_layout.addWidget(self.dt_btn, line, 1)
 
         line = line + 1
 
-        lbl = QLabel(tr("AuxDisplay", "Monochrome Screen Setting/黑白屏设置"))
+        lbl = QLabel(tr("AuxDisplay", "Monochrome display"))
 
         g_layout.addWidget(lbl, line, 0)
-        self.ad_btn = QPushButton(tr("AuxDisplay", "Update/更新"))
+        self.ad_btn = QPushButton(tr("AuxDisplay", "Update"))
         self.ad_btn.clicked.connect(self.on_sync_clicked)
         g_layout.addWidget(self.ad_btn, line, 1)
 
         line = line + 1
-        lbl = QLabel(tr("AuxDisplay", "Text Editor/文本编辑"))
+        lbl = QLabel(tr("AuxDisplay", "Text editor"))
 
         g_layout.addWidget(lbl, line, 0, Qt.AlignRight)
 
         h_lyt = QHBoxLayout()
         h_lyt.addStretch(1)
-        h_lyt.addWidget(QLabel(tr("AuxDisplay", "Select Font/选择字体")))
+        h_lyt.addWidget(QLabel(tr("AuxDisplay", "Font")))
 
         fontDatabase = QFontDatabase()
         families = fontDatabase.families()
@@ -151,7 +151,7 @@ class AuxDsiplay(BasicEditor):
         for family in families:
             self.ad_fonts.addItem(family)
         h_lyt.addWidget(self.ad_fonts)
-        h_lyt.addWidget(QLabel(tr("AuxDisplay", "Font Size/字体大小")))
+        h_lyt.addWidget(QLabel(tr("AuxDisplay", "Font size")))
         self.ad_font_size= QSpinBox()
         self.ad_font_size.valueChanged.connect(self.on_font_size_change)
         self.ad_font_size.setMinimum(8)

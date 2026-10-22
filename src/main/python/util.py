@@ -68,9 +68,15 @@ def hid_send(dev, msg, retries=1):
 
 
 def is_rawhid(desc, quiet):
+    if (type(desc.get("usage_page")) is not int or type(desc.get("usage")) is not int
+            or not isinstance(desc.get("path"), (str, bytes)) or not desc["path"]):
+        if not quiet:
+            logging.warning("is_rawhid: unexpected descriptor: %r", desc)
+        return False
+
     if desc["usage_page"] != 0xFF60 or desc["usage"] != 0x61:
         if not quiet:
-            logging.warning("is_rawhid: {} does not match - usage_page={:04X} usage={:02X}".format(
+            logging.debug("is_rawhid: {} does not match - usage_page={:04X} usage={:02X}".format(
                 desc["path"], desc["usage_page"], desc["usage"]))
         return False
 

@@ -23,10 +23,10 @@ WIFI_STATE_IDLE = 0
 WIFI_STATE_CONNECTING = 1
 WIFI_STATE_CONNECTED = 2
 
-WIFI_START_SCAN_TEXT = tr("Misc", "Scan/扫描")
-WIFI_STOP_SCAN_TEXT = tr("Misc", "Stop Scan/停止扫描")
-WIFI_CONNECT_TEXT = tr("Misc", "Connect/连接")
-WIFI_DISCONNECT_TEXT = tr("Misc", "Disconnect/断开连接")
+WIFI_START_SCAN_TEXT = tr("Misc", "Scan")
+WIFI_STOP_SCAN_TEXT = tr("Misc", "Stop Scan")
+WIFI_CONNECT_TEXT = tr("Misc", "Connect")
+WIFI_DISCONNECT_TEXT = tr("Misc", "Disconnect")
 
 WIFI_CONNECT_TIMEOUT = 10  #seconds
 WIFI_SCAN_TIMEOUT = 20  #seconds
@@ -55,9 +55,9 @@ class Misc(BasicEditor):
         line = 0
 
         # nkro setting
-        self.nk_lbl = QLabel(tr("Misc", "Set the keyboard's nkro/设置全键无冲:"))
+        self.nk_lbl = QLabel(tr("Misc", "N-key rollover (NKRO):"))
         g_layout.addWidget(self.nk_lbl, line, 0)
-        self.ns_lbl = QLabel(tr("Misc", "OFF/关闭"))
+        self.ns_lbl = QLabel(tr("Misc", "Off"))
         g_layout.addWidget(self.ns_lbl, line, 1, alignment=Qt.AlignCenter)
         self.nk_cbx = QCheckBox()
         self.nk_cbx.setTristate(False)
@@ -67,21 +67,21 @@ class Misc(BasicEditor):
 
         # polling rate setting
         line = line + 1
-        self.pr_lbl = QLabel(tr("Misc", "Set the keyboard's poll rate/键盘回报率:"))
+        self.pr_lbl = QLabel(tr("Misc", "Polling rate:"))
         g_layout.addWidget(self.pr_lbl, line, 0)
         self.pr_cbb = QComboBox()
-        self.pr_cbb.addItem(tr("Misc", "Fullspeed/全速 1K Hz"))
-        self.pr_cbb.addItem(tr("Misc", "Highspeed/高速 2K Hz"))
-        self.pr_cbb.addItem(tr("Misc", "Highspeed/高速 4K Hz"))
-        self.pr_cbb.addItem(tr("Misc", "Highspeed/高速 8K Hz"))
+        self.pr_cbb.addItem(tr("Misc", "1,000 Hz (full speed)"))
+        self.pr_cbb.addItem(tr("Misc", "2,000 Hz (high speed)"))
+        self.pr_cbb.addItem(tr("Misc", "4,000 Hz (high speed)"))
+        self.pr_cbb.addItem(tr("Misc", "8,000 Hz (high speed)"))
         g_layout.addWidget(self.pr_cbb, line, 1)
-        self.pr_btn = QPushButton(tr("Misc", "Apply && Reset/应用并重启键盘"))
+        self.pr_btn = QPushButton(tr("Misc", "Apply && Restart"))
         self.pr_btn.clicked.connect(self.on_pr_btn)
         g_layout.addWidget(self.pr_btn, line, 2)
 
         # down debounce setting
         line = line + 1
-        self.dd_lbl = QLabel(tr("Misc", "Set the debounce time(ms) when press key/按键按下时的去抖时间:"))
+        self.dd_lbl = QLabel(tr("Misc", "Press debounce (ms):"))
         g_layout.addWidget(self.dd_lbl, line, 0)
         self.dd_sld= QSlider(Qt.Horizontal)
         self.dd_sld.setEnabled(False)
@@ -104,7 +104,7 @@ class Misc(BasicEditor):
 
         # up debounce setting
         line = line + 1
-        self.ud_lbl = QLabel(tr("Misc", "Set the debounce time(ms) when release key/按键释放时的去抖时间:"))
+        self.ud_lbl = QLabel(tr("Misc", "Release debounce (ms):"))
         g_layout.addWidget(self.ud_lbl, line, 0)
         self.ud_sld= QSlider(Qt.Horizontal)
         self.ud_sld.setEnabled(False)
@@ -127,28 +127,28 @@ class Misc(BasicEditor):
 
         # import/export setting from/to file
         line = line + 1
-        self.ie_lbl = QLabel(tr("Misc", "Import or export keyboard config file:/磁轴配置操作"))
+        self.ie_lbl = QLabel(tr("Misc", "Magnetic switch configuration:"))
         g_layout.addWidget(self.ie_lbl, line, 0)
-        self.im_btn = QPushButton(tr("Misc", "Import/导入 ..."))
+        self.im_btn = QPushButton(tr("Misc", "Import…"))
         self.im_btn.clicked.connect(self.on_im_btn)
         g_layout.addWidget(self.im_btn, line, 1)
-        self.ex_btn = QPushButton(tr("Misc", "Export/导出 ..."))
+        self.ex_btn = QPushButton(tr("Misc", "Export…"))
         self.ex_btn.clicked.connect(self.on_ex_btn)
         g_layout.addWidget(self.ex_btn, line, 2)
 
         # magnetic pole setting
         line = line + 1
-        self.mp_lbl = QLabel(tr("Misc", "Set the magnetic pole of the switch:/设置磁轴极性"))
+        self.mp_lbl = QLabel(tr("Misc", "Switch polarity:"))
         g_layout.addWidget(self.mp_lbl, line, 0)
         self.mp_cbb = QComboBox()
-        self.mp_cbb.addItem(tr("Misc", "South/南极"))
-        self.mp_cbb.addItem(tr("misc", "North/北极"))
+        self.mp_cbb.addItem(tr("Misc", "South"))
+        self.mp_cbb.addItem(tr("misc", "North"))
         self.mp_cbb.currentIndexChanged.connect(self.on_mp_cbb)
         g_layout.addWidget(self.mp_cbb, line, 1)
 
         # apcrt profile setting
         line = line + 1
-        self.apcrt_lbl = QLabel(tr("Misc", "Set keyboard's APCRT profile/设置当前APCRT的配置:"))
+        self.apcrt_lbl = QLabel(tr("Misc", "Actuation / Rapid Trigger profile:"))
         g_layout.addWidget(self.apcrt_lbl, line, 0)
         self.apcrt_cbb = QComboBox()
         self.apcrt_cbb.currentIndexChanged.connect(self.on_apcrt_cbb)
@@ -156,9 +156,9 @@ class Misc(BasicEditor):
 
         # dks state setting
         line = line + 1
-        self.dks_status_lbl = QLabel(tr("Misc", "Set keyboard's DKS status/切换DKS状态:"))
+        self.dks_status_lbl = QLabel(tr("Misc", "DKS:"))
         g_layout.addWidget(self.dks_status_lbl, line, 0)
-        self.dks_lbl = QLabel(tr("Misc", "ON/激活"))
+        self.dks_lbl = QLabel(tr("Misc", "On"))
         g_layout.addWidget(self.dks_lbl, line, 1, alignment=Qt.AlignCenter)
         self.dks_cbx = QCheckBox()
         self.dks_cbx.setTristate(False)
@@ -168,27 +168,27 @@ class Misc(BasicEditor):
 
         # switch type setting
         line = line + 1
-        self.st_lbl = QLabel(tr("Misc", "Set the current switch/设置当前轴体:"))
+        self.st_lbl = QLabel(tr("Misc", "Switch type:"))
         g_layout.addWidget(self.st_lbl, line, 0)
         self.st_cbb = QComboBox()
-        self.st_cbb.addItem(tr("Misc", "Common Switch/其它"))
-        self.st_cbb.addItem(tr("Misc", "Gateron Magnetic Jade/磁玉系列"))
-        self.st_cbb.addItem(tr("Misc", "TTC King of Magnetic/万磁王系列"))
+        self.st_cbb.addItem(tr("Misc", "Other switches"))
+        self.st_cbb.addItem(tr("Misc", "Gateron Magnetic Jade"))
+        self.st_cbb.addItem(tr("Misc", "TTC King of Magnetic"))
         g_layout.addWidget(self.st_cbb, line, 1)
-        self.st_btn = QPushButton(tr("Misc", "Apply/应用"))
+        self.st_btn = QPushButton(tr("Misc", "Apply"))
         self.st_btn.clicked.connect(self.on_st_btn)
         g_layout.addWidget(self.st_btn, line, 2)
     
         #advanced
         line = line + 1
-        self.adv_btn = QPushButton(tr("Misc", "Advanced/高级选项 >>"))
+        self.adv_btn = QPushButton(tr("Misc", "Advanced »"))
         self.adv_btn.setMaximumWidth(200)
         self.adv_btn.clicked.connect(self.on_adv_btn)
         g_layout.addWidget(self.adv_btn, line, 0)
 
         #noise
         line = line + 1
-        self.noise_lbl = QLabel(tr("Misc", "Set the noise sensitivity/电磁干扰灵敏度:"))
+        self.noise_lbl = QLabel(tr("Misc", "Electromagnetic noise sensitivity:"))
         g_layout.addWidget(self.noise_lbl, line, 0)
         self.noise_dpb = QSpinBox()
         self.noise_dpb.setRange(0, 255)
@@ -207,7 +207,7 @@ class Misc(BasicEditor):
 
         #apc
         line = line + 1
-        self.apc_lbl = QLabel(tr("Misc", "Set the apc sensitivity/APC动作灵敏度:"))
+        self.apc_lbl = QLabel(tr("Misc", "Actuation sensitivity:"))
         g_layout.addWidget(self.apc_lbl, line, 0)
         self.apc_dpb = QSpinBox()
         self.apc_dpb.setRange(0, 255)
@@ -226,7 +226,7 @@ class Misc(BasicEditor):
 
         #rt
         line = line + 1
-        self.rt_lbl = QLabel(tr("Misc", "Set the rt sensitivity/RT动作灵敏度:"))
+        self.rt_lbl = QLabel(tr("Misc", "Rapid Trigger sensitivity:"))
         g_layout.addWidget(self.rt_lbl, line, 0)
         self.rt_dpb = QSpinBox()
         self.rt_dpb.setRange(0, 255)
@@ -245,7 +245,7 @@ class Misc(BasicEditor):
 
         #top
         line = line + 1
-        self.top_lbl = QLabel(tr("Misc", "Set the top sensitivity/轴体顶部状态灵敏度:"))
+        self.top_lbl = QLabel(tr("Misc", "Top position sensitivity:"))
         g_layout.addWidget(self.top_lbl, line, 0)
         self.top_dpb = QSpinBox()
         self.top_dpb.setRange(0, 255)
@@ -264,7 +264,7 @@ class Misc(BasicEditor):
 
         #bottom
         line = line + 1
-        self.btm_lbl = QLabel(tr("Misc", "Set the bottom sensitivity/轴体底部状态灵敏度:"))
+        self.btm_lbl = QLabel(tr("Misc", "Bottom position sensitivity:"))
         g_layout.addWidget(self.btm_lbl, line, 0)
         self.btm_dpb = QSpinBox()
         self.btm_dpb.setRange(0, 255)
@@ -283,12 +283,12 @@ class Misc(BasicEditor):
 
         #firmware
         line = line + 1
-        self.firmware_lbl = QLabel(tr("Misc", "Firmware/键盘固件:"))
+        self.firmware_lbl = QLabel(tr("Misc", "Firmware"))
         g_layout.addWidget(self.firmware_lbl, line, 0)
-        self.firmware_load_btn = QPushButton(tr("Misc", "Load/导入 ..."))
+        self.firmware_load_btn = QPushButton(tr("Misc", "Load…"))
         self.firmware_load_btn.clicked.connect(self.on_load_firmware)
         g_layout.addWidget(self.firmware_load_btn, line, 1)
-        self.firmware_check_btn = QPushButton(tr("Misc", "Check update/检查更新"))
+        self.firmware_check_btn = QPushButton(tr("Misc", "Check for updates"))
         self.firmware_check_btn.clicked.connect(self.on_check_firmware)
         g_layout.addWidget(self.firmware_check_btn, line, 2)
 
@@ -296,7 +296,7 @@ class Misc(BasicEditor):
             line = line + 1
             self.upload_bar = QProgressBar()
             g_layout.addWidget(self.upload_bar, line, 1)
-            self.upload_btn = QPushButton(tr("Misc", "Upload && Reset/更新并重启"))
+            self.upload_btn = QPushButton(tr("Misc", "Upload && Restart"))
             self.upload_btn.clicked.connect(self.on_upload_reset)
             self.upload_btn.setEnabled(False)
             g_layout.addWidget(self.upload_btn, line, 2)
@@ -332,7 +332,7 @@ class Misc(BasicEditor):
             self.esp32_param_edt = QLineEdit()
             self.esp32_param_edt.editingFinished.connect(self.on_esp32_param_text)
             g_layout.addWidget(self.esp32_param_edt, line, 1)
-            self.esp32_apply_btn = QPushButton(tr("Misc", "Apply ESP32 Command/应用ESP32指令"))
+            self.esp32_apply_btn = QPushButton(tr("Misc", "Apply ESP32 Command"))
             self.esp32_apply_btn.clicked.connect(self.on_esp32_apply_btn)
             g_layout.addWidget(self.esp32_apply_btn, line, 2)
         
@@ -351,7 +351,7 @@ class Misc(BasicEditor):
         self.wifi_ap_lst.currentRowChanged.connect(self.on_wifi_ap_changed)
         g_layout.addWidget(self.wifi_ap_lst, line, 1)
         t_lyt = QHBoxLayout()
-        self.wifi_pass_lbl = QLabel(tr("Misc", "Password/密码:"))
+        self.wifi_pass_lbl = QLabel(tr("Misc", "Password"))
         t_lyt.addWidget(self.wifi_pass_lbl)
         self.wifi_pass_edt = QLineEdit()
         self.wifi_pass_edt.editingFinished.connect(self.on_wifi_pass_text)
@@ -422,7 +422,7 @@ class Misc(BasicEditor):
     def reset_ui(self):
         self.nk_cbx.blockSignals(True)
         self.nk_cbx.setCheckState(self.keyboard.amk_nkro)
-        self.ns_lbl.setText(tr("Misc", "ON/开启") if self.keyboard.amk_nkro else tr("Misc", "OFF/关闭"))
+        self.ns_lbl.setText(tr("Misc", "On") if self.keyboard.amk_nkro else tr("Misc", "Off"))
         self.nk_cbx.blockSignals(False)
 
         if self.device.keyboard.keyboard_speed == "hs":
@@ -455,7 +455,7 @@ class Misc(BasicEditor):
 
             self.dks_cbx.blockSignals(True)
             self.dks_cbx.setCheckState(not self.keyboard.amk_dks_disable)
-            self.dks_lbl.setText(tr("Misc", "OFF/关闭") if self.keyboard.amk_dks_disable else tr("Misc", "ON/开启"))
+            self.dks_lbl.setText(tr("Misc", "Off") if self.keyboard.amk_dks_disable else tr("Misc", "On"))
             self.dks_cbx.blockSignals(False)
             self.dks_status_lbl.show()
             self.dks_lbl.show()
@@ -536,7 +536,7 @@ class Misc(BasicEditor):
             self.firmware_lbl.show()
             self.firmware_load_btn.show()
             self.firmware_check_btn.show()
-            self.firmware_check_btn.setText(tr("Misc", "Check update/检查更新"))
+            self.firmware_check_btn.setText(tr("Misc", "Check for updates"))
             if sys.platform == "emscripten":
                 self.upload_btn.show()
                 self.upload_bar.show()
@@ -619,9 +619,9 @@ class Misc(BasicEditor):
         #print("dks checkbox changed")
         val = True if self.dks_cbx.checkState() == Qt.Checked else False
         if val:
-            self.dks_lbl.setText("ON")
+            self.dks_lbl.setText("On")
         else:
-            self.dks_lbl.setText("OFF")
+            self.dks_lbl.setText("Off")
 
         self.keyboard.apply_dks_disable(not val)
 
@@ -629,9 +629,9 @@ class Misc(BasicEditor):
         #print("nkro checkbox changed")
         val = 1 if self.nk_cbx.checkState() == Qt.Checked else 0
         if val != 0:
-            self.ns_lbl.setText("ON")
+            self.ns_lbl.setText("On")
         else:
-            self.ns_lbl.setText("OFF")
+            self.ns_lbl.setText("Off")
 
         self.keyboard.apply_nkro(val)
 
@@ -647,7 +647,7 @@ class Misc(BasicEditor):
                 kbd["vendor_id"] != self.device.desc["vendor_id"] or \
                 kbd["product_id"] != self.device.desc["product_id"]:
                 button = QMessageBox.warning(None, "Loading config",
-                                            "The current config({}) was not for this keyboard.".format(kbd["name"]),
+                                            "The configuration for {} belongs to a different keyboard.".format(kbd["name"]),
                                             buttons=QMessageBox.Ok,
                                             defaultButton=QMessageBox.Ok)
                 return
@@ -805,7 +805,7 @@ class Misc(BasicEditor):
             self.btm_sld.blockSignals(False)
             self.btm_sld.show()
 
-            self.adv_btn.setText(tr("Misc", "Hide/隐藏 <<"))
+            self.adv_btn.setText(tr("Misc", "Hide advanced «"))
         else:
             self.noise_lbl.hide()
             self.noise_dpb.hide()
@@ -826,7 +826,7 @@ class Misc(BasicEditor):
             self.btm_lbl.hide()
             self.btm_dpb.hide()
             self.btm_sld.hide()
-            self.adv_btn.setText(tr("Misc", "Advanced/高级选项 >>"))
+            self.adv_btn.setText(tr("Misc", "Advanced »"))
 
     def on_adv_btn(self):
         self.advance = not self.advance
@@ -945,7 +945,7 @@ class Misc(BasicEditor):
         if (len(uf2) % 512) != 0:
             if sys.platform != "emscripten":
                 button = QMessageBox.warning(None, "Loading firmware",
-                                        "Invalid UF2 file size./固件已损坏",
+                                        "Invalid UF2 file size.",
                                         buttons=QMessageBox.Ok,
                                         defaultButton=QMessageBox.Ok)
             return (None,None)
@@ -958,7 +958,7 @@ class Misc(BasicEditor):
             else:
                 if sys.platform != "emscripten":
                     button = QMessageBox.warning(None, "Loading firmware",
-                                            "UF2 file content invalid./无效的固件",
+                                            "Invalid UF2 file content.",
                                             buttons=QMessageBox.Ok,
                                             defaultButton=QMessageBox.Ok)
                 return (None,None)
@@ -977,7 +977,7 @@ class Misc(BasicEditor):
         if magic != BUILD_MAGIC:
             print("Invalid magic number:", hex(magic))
             button = QMessageBox.warning(None, "Loading firmware",
-                                        "Invalid firmware file./固件已损坏",
+                                        "Invalid firmware file.",
                                         buttons=QMessageBox.Ok,
                                         defaultButton=QMessageBox.Ok)
             return
@@ -989,7 +989,7 @@ class Misc(BasicEditor):
         if vendor_id != firmware_vendor_id or product_id != firmware_product_id or family != firmware_family:
             print("Invalid firmware vendor id or product id or family:", hex(vendor_id), hex(product_id), hex(family), hex(firmware_vendor_id), hex(firmware_product_id), hex(firmware_family))
             button = QMessageBox.warning(None, "Loading firmware",
-                                        "The firmware is not for this keyboard./固件不适合此键盘",
+                                        "The firmware is not for this keyboard.",
                                         buttons=QMessageBox.Ok,
                                         defaultButton=QMessageBox.Ok)
             return
@@ -998,7 +998,7 @@ class Misc(BasicEditor):
 
         self.keyboard.firmware_prepare()
 
-        progress = QProgressDialog("Upload firmware/更新固件...", "Abort/退出", 0, len(data))
+        progress = QProgressDialog("Upload firmware", "Cancel", 0, len(data))
         progress.setWindowModality(Qt.WindowModal)
         progress.show()
 
@@ -1023,7 +1023,7 @@ class Misc(BasicEditor):
         self.keyboard.firmware_finish()
 
         button = QMessageBox.warning(None, "Firmware",
-                                    "Need reset keyboard to use the new firmware, do you want to reset now?\n新固件需要重启键盘才能生效,现在重启?",
+                                    "Restart the keyboard to use the new firmware. Restart now?",
                                     buttons=QMessageBox.Yes | QMessageBox.No,
                                     defaultButton=QMessageBox.No)
         if button == QMessageBox.Yes:
@@ -1043,7 +1043,7 @@ class Misc(BasicEditor):
             except URLError as e:
                 #print("Failed to load firmware list:", e)
                 button = QMessageBox.warning(None, "Firmware",
-                                            "Failed to load firmware list./无法加载固件列表",
+                                            "Failed to load firmware list.",
                                             buttons=QMessageBox.Ok,
                                             defaultButton=QMessageBox.Ok)
                 return
@@ -1058,7 +1058,7 @@ class Misc(BasicEditor):
                     if (kbd_date > date) or (kbd_date == date and kbd_second > second):
                         #print("New firmware found:", kbd["build"])
                         button = QMessageBox.warning(None, "Firmware",
-                                                    "New firmware found.Do you want to download and update it?\n发现新固件,是否下载并更新?",
+                                                    "New firmware is available. Download and update?",
                                                     buttons=QMessageBox.Yes | QMessageBox.No,
                                                     defaultButton=QMessageBox.No)
                         if button == QMessageBox.Yes:
@@ -1069,7 +1069,7 @@ class Misc(BasicEditor):
                             except URLError as e:
                                 #print("Failed to load firmware:", e)
                                 button = QMessageBox.warning(None, "Firmware",
-                                                            "Failed to download firmware./无法下载固件",
+                                                            "Failed to download firmware.",
                                                             buttons=QMessageBox.Ok,
                                                             defaultButton=QMessageBox.Ok)
                                 return
@@ -1077,14 +1077,14 @@ class Misc(BasicEditor):
                             data, address = self.parse_uf2(uf2)
                             if data is None or address is None:
                                 button = QMessageBox.warning(None, "Firmware",
-                                                            "Invalid firmware./不是正确的固件",
+                                                            "Invalid firmware.",
                                                             buttons=QMessageBox.Ok,
                                                             defaultButton=QMessageBox.Ok)
                                 return
                             self.upload_firmware(data, address)
                     else:
                         button = QMessageBox.warning(None, "Firmware",
-                                                    "No new firmware available./目前已经是最新版",
+                                                    "The firmware is up to date.",
                                                     buttons=QMessageBox.Ok,
                                                     defaultButton=QMessageBox.Ok)
                     break
@@ -1103,7 +1103,7 @@ class Misc(BasicEditor):
                         import vialglue
                         vialglue.load_firmware_data(url_prefix + "firmwares/"+kbd["firmware"])
                     else:
-                        self.firmware_check_btn.setText(tr("Misc", "Already Latest/已经是最新版本"))
+                        self.firmware_check_btn.setText(tr("Misc", "Up to date"))
                     break
 
     def on_firmware_data_loaded(self, data):
@@ -1118,7 +1118,7 @@ class Misc(BasicEditor):
             self.upload_bar.reset()
 
     def on_load_firmware(self):
-        firmware_file, firmware_file_type = QFileDialog.getOpenFileName(None, "Select Firmware/选择固件", os.getcwd(), "Firmware Files (*.uf2)")
+        firmware_file, firmware_file_type = QFileDialog.getOpenFileName(None, "Select Firmware", os.getcwd(), "Firmware Files (*.uf2)")
         if firmware_file is None or firmware_file == "":
             return
         
@@ -1172,7 +1172,7 @@ class Misc(BasicEditor):
             self.keyboard.firmware_finish()
             self.keyboard.firmware_reset()
 
-            self.firmware_check_btn.setText(tr("Misc", "Check update/检查更新"))
+            self.firmware_check_btn.setText(tr("Misc", "Check for updates"))
             self.current_firmware_data = None
             if sys.platform == "emscripten":
                 import vialglue

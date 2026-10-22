@@ -1,3 +1,4 @@
+from ui_text import device_text
 # SPDX-License-Identifier: GPL-2.0-or-later
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QLabel, QSlider, QPushButton, QCheckBox, QColorDialog, QListWidget
 from PyQt5.QtCore import Qt, QTimer
@@ -86,30 +87,30 @@ class RgbIndicator(BasicEditor):
         layout.addStretch(3)
         lyt = QHBoxLayout()
         vv = QVBoxLayout()
-        vv.addWidget(QLabel(tr("RGB Indicator", "Indicators/指示灯:")))
+        vv.addWidget(QLabel(tr("RGB Indicator", "Indicators")))
         self.indicator_lst = QListWidget()
         self.indicator_lst.itemSelectionChanged.connect(self.on_indicator_changed)
         vv.addWidget(self.indicator_lst)
         lyt.addLayout(vv)
         layout.addLayout(lyt)
         layout.addStretch(1)
-        self.color_btn = QPushButton(tr("RGB Indicator", "Color/颜色..."))
+        self.color_btn = QPushButton(tr("RGB Indicator", "Color…"))
         self.color_btn.clicked.connect(self.on_color_btn_clicked)
         layout.addWidget(self.color_btn)
-        self.on_cbx = QCheckBox(tr("RGB Indicator", "Toggle On/切换状态"))
+        self.on_cbx = QCheckBox(tr("RGB Indicator", "Enabled"))
         self.on_cbx.stateChanged.connect(self.on_state_check)
         layout.addWidget(self.on_cbx)
-        self.dynamic_cbx = QCheckBox(tr("RGB Indicator", "Toggle Dynamic/切换动态效果"))
+        self.dynamic_cbx = QCheckBox(tr("RGB Indicator", "Dynamic"))
         self.dynamic_cbx.stateChanged.connect(self.on_dynamic_check)
         layout.addWidget(self.dynamic_cbx)
-        self.blink_cbx = QCheckBox(tr("RGB Indicator", "Toggle Blink/切换闪烁效果"))
+        self.blink_cbx = QCheckBox(tr("RGB Indicator", "Blink"))
         self.blink_cbx.stateChanged.connect(self.on_blink_check)
         layout.addWidget(self.blink_cbx)
-        self.breath_cbx = QCheckBox(tr("RGB Indicator", "Toggle Breath/切换呼吸效果"))
+        self.breath_cbx = QCheckBox(tr("RGB Indicator", "Breathing"))
         self.breath_cbx.stateChanged.connect(self.on_breath_check)
         layout.addWidget(self.breath_cbx)
         lyt = QHBoxLayout()
-        lyt.addWidget(QLabel(tr("RGB Indicator", "Speed/速度")))
+        lyt.addWidget(QLabel(tr("RGB Indicator", "Speed")))
         self.speed_sld = QSlider(Qt.Horizontal)
         self.speed_sld.setMaximumWidth(300)
         self.speed_sld.setMinimumWidth(200)
@@ -155,7 +156,7 @@ class RgbIndicator(BasicEditor):
         if self.valid():
             self.indicator_lst.clear()
             for indicator in self.keyboard.amk_rgb_indicator["indicators"]:
-                self.indicator_lst.addItem(indicator["name"])
+                self.indicator_lst.addItem(device_text(indicator["name"]))
 
             self.keyboardWidget.update_layout()
             self.update_indicator_widget()

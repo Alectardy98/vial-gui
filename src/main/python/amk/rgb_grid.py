@@ -1,3 +1,4 @@
+from ui_text import device_text
 # SPDX-License-Identifier: GPL-2.0-or-later
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QLabel, QSlider, QPushButton, QCheckBox, QColorDialog, QListWidget, QLineEdit, QComboBox
 from PyQt5.QtCore import Qt, QTimer
@@ -101,36 +102,36 @@ class RgbGrid(BasicEditor):
         layout.addStretch(3)
         lyt = QHBoxLayout()
         vv = QVBoxLayout()
-        vv.addWidget(QLabel(tr("RGB Grid", "Grids/网格:")))
+        vv.addWidget(QLabel(tr("RGB Grid", "Grids")))
         self.grid_lst = QListWidget()
         self.grid_lst.itemSelectionChanged.connect(self.on_grid_changed)
         vv.addWidget(self.grid_lst)
         lyt.addLayout(vv)
         vv = QVBoxLayout()
-        vv.addWidget(QLabel(tr("RGB Grid", "Effects/灯效:")))
+        vv.addWidget(QLabel(tr("RGB Grid", "Effects")))
         self.mode_lst = QListWidget()
         self.mode_lst.itemSelectionChanged.connect(self.on_mode_changed)
         vv.addWidget(self.mode_lst)
         lyt.addLayout(vv)
         layout.addLayout(lyt)
         layout.addStretch(1)
-        self.color_btn = QPushButton(tr("RGB Grid", "Color/颜色..."))
+        self.color_btn = QPushButton(tr("RGB Grid", "Color…"))
         self.color_btn.clicked.connect(self.on_color_btn_clicked)
         layout.addWidget(self.color_btn)
-        self.on_cbx = QCheckBox(tr("RGB Grid", "Toggle On/切换状态"))
+        self.on_cbx = QCheckBox(tr("RGB Grid", "Enabled"))
         self.on_cbx.stateChanged.connect(self.on_state_check)
         layout.addWidget(self.on_cbx)
-        self.dynamic_cbx = QCheckBox(tr("RGB Grid", "Toggle Dynamic/切换动态效果"))
+        self.dynamic_cbx = QCheckBox(tr("RGB Grid", "Dynamic"))
         self.dynamic_cbx.stateChanged.connect(self.on_dynamic_check)
         layout.addWidget(self.dynamic_cbx)
-        self.blink_cbx = QCheckBox(tr("RGB Grid", "Toggle Blink/切换闪烁效果"))
+        self.blink_cbx = QCheckBox(tr("RGB Grid", "Blink"))
         self.blink_cbx.stateChanged.connect(self.on_blink_check)
         layout.addWidget(self.blink_cbx)
-        self.breath_cbx = QCheckBox(tr("RGB Grid", "Toggle Breath/切换呼吸效果"))
+        self.breath_cbx = QCheckBox(tr("RGB Grid", "Breathing"))
         self.breath_cbx.stateChanged.connect(self.on_breath_check)
         layout.addWidget(self.breath_cbx)
         lyt = QHBoxLayout()
-        lyt.addWidget(QLabel(tr("RGB Grid", "Speed/速度")))
+        lyt.addWidget(QLabel(tr("RGB Grid", "Speed")))
         self.speed_sld = QSlider(Qt.Horizontal)
         self.speed_sld.setMaximumWidth(300)
         self.speed_sld.setMinimumWidth(200)
@@ -144,7 +145,7 @@ class RgbGrid(BasicEditor):
         lyt.addWidget(self.speed_sld)
         layout.addLayout(lyt)
         lyt = QHBoxLayout()
-        self.bright_lbl = QLabel(tr("RGB Grid", "Bright/亮度"))
+        self.bright_lbl = QLabel(tr("RGB Grid", "Brightness"))
         lyt.addWidget(self.bright_lbl)
         self.bright_sld = QSlider(Qt.Horizontal)
         self.bright_sld.setMaximumWidth(300)
@@ -158,7 +159,7 @@ class RgbGrid(BasicEditor):
         lyt.addWidget(self.bright_sld)
         layout.addLayout(lyt)
         lyt = QHBoxLayout()
-        self.text_cbx = QCheckBox(tr("RGB Grid", "Text/文字"))
+        self.text_cbx = QCheckBox(tr("RGB Grid", "Text"))
         self.text_cbx.stateChanged.connect(self.on_mask_check)
         lyt.addWidget(self.text_cbx)
         self.text_edt = QLineEdit()
@@ -174,7 +175,7 @@ class RgbGrid(BasicEditor):
         self.text_mode_cbb.currentIndexChanged.connect(self.on_mask_mode)
         lyt.addWidget(self.text_mode_cbb)
         layout.addLayout(lyt)
-        self.typing_cbx = QCheckBox(tr("RGB Grid", "Typing Effect/打字特效"))
+        self.typing_cbx = QCheckBox(tr("RGB Grid", "Typing effect"))
         self.typing_cbx.stateChanged.connect(self.on_typing_check)
         layout.addWidget(self.typing_cbx)
         layout.addStretch(3)
@@ -227,9 +228,9 @@ class RgbGrid(BasicEditor):
             #print("GRID: ", grid)
             self.text_cbx.setChecked(True if grid["mask_enable"] > 0 else False)
             self.text_edt.setText(grid["mask_text"])
-            self.text_rotation_cbb.addItems(grid["rotation_list"])
+            self.text_rotation_cbb.addItems([device_text(label) for label in grid["rotation_list"]])
             self.text_rotation_cbb.setCurrentIndex(grid["mask_rotation"])
-            self.text_mode_cbb.addItems(grid["mode_list"])
+            self.text_mode_cbb.addItems([device_text(label) for label in grid["mode_list"]])
             self.text_mode_cbb.setCurrentIndex(grid["mask_mode"])
         else:
             self.text_cbx.setEnabled(False)
@@ -265,7 +266,7 @@ class RgbGrid(BasicEditor):
         if self.valid():
             self.grid_lst.clear()
             for grid in self.keyboard.amk_rgb_grid["grids"]:
-                self.grid_lst.addItem(grid["name"])
+                self.grid_lst.addItem(device_text(grid["name"]))
             self.grid_lst.setCurrentRow(0)
             self.grid = 0
 
@@ -273,7 +274,7 @@ class RgbGrid(BasicEditor):
 
             self.mode_lst.clear()
             for effect in self.keyboard.amk_rgb_grid["effects"]:
-                self.mode_lst.addItem(effect)
+                self.mode_lst.addItem(device_text(effect))
 
             self.keyboardWidget.update_layout()
             for widget in self.keyboardWidget.widgets:

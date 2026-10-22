@@ -79,7 +79,7 @@ class MainWindow(QMainWindow):
 
         self.btn_refresh_devices = QToolButton()
         self.btn_refresh_devices.setToolButtonStyle(Qt.ToolButtonTextOnly)
-        self.btn_refresh_devices.setText(tr("MainWindow", "Refresh/刷新"))
+        self.btn_refresh_devices.setText(tr("MainWindow", "Refresh"))
         self.btn_refresh_devices.clicked.connect(self.on_click_refresh)
 
         layout_combobox = QHBoxLayout()
@@ -112,27 +112,27 @@ class MainWindow(QMainWindow):
         self.rgb_config = RgbConfig(self.layout_editor)
         self.aux_display = AuxDsiplay(self.layout_editor, appctx)
 
-        self.editors = [(self.keymap_editor, "Keymap/键位"), (self.layout_editor, "Layout/配列"), (self.matrix_tester, "Matrix tester/按键测试"),
-                        (self.macro_recorder, "Macros/按键宏"),
-                        (self.rgb_strip, "RGB Strips/灯条"),
-                        (self.rgb_grid, "RGB Grids/灯阵"),
-                        (self.rgb_matrix, "RGB Matrix/轴灯"),
-                        (self.rgb_indicator, "RGB Indicator/指示灯"),
-                        (self.calibrate, "Key Calibrate/按键校准"),
-                        (self.apc_rt, "APC/RT/按键行程和快速触发"),
-                        (self.dks, "DKS Settings/DKS设置"),
-                        (self.snaptap, "Snap Tap Settings/SnapTap设置"), 
-                        (self.misc, "Misc settings/其它设置"),
-                        (self.aux_display, "Auxiliary Display/辅助屏幕"),
-                        (self.animation, "Animations/屏幕动画"), 
-                        (self.rgb_config, "RGB Config/配置"),
-                        (self.qmk_settings, "QMK Settings/QMK设置"),
-                        (self.tap_dance, "Tap Dance/高级按键"),
-                        (self.combos, "Combos/组合键"),
-                        (self.key_override, "Key Overrides/按键改写"),
-                        (self.alt_repeat_key, "Alt Repeat Key/按键重复"),
-                        (self.rgb_configurator, "Lighting/灯光"),
-                        (self.firmware_flasher, "Firmware updater/固件更新")
+        self.editors = [(self.keymap_editor, "Keymap"), (self.layout_editor, "Layout"), (self.matrix_tester, "Matrix Tester"),
+                        (self.macro_recorder, "Macros"),
+                        (self.rgb_strip, "RGB Strips"),
+                        (self.rgb_grid, "RGB Grids"),
+                        (self.rgb_matrix, "RGB Matrix"),
+                        (self.rgb_indicator, "RGB Indicators"),
+                        (self.calibrate, "Calibration"),
+                        (self.apc_rt, "APC/RT"),
+                        (self.dks, "DKS"),
+                        (self.snaptap, "Snap Tap"),
+                        (self.misc, "General"),
+                        (self.aux_display, "Auxiliary Display"),
+                        (self.animation, "Animations"),
+                        (self.rgb_config, "RGB Configuration"),
+                        (self.qmk_settings, "QMK Settings"),
+                        (self.tap_dance, "Tap Dance"),
+                        (self.combos, "Combos"),
+                        (self.key_override, "Key Overrides"),
+                        (self.alt_repeat_key, "Alt Repeat Key"),
+                        (self.rgb_configurator, "Lighting"),
+                        (self.firmware_flasher, "Firmware Updater")
                         ]
 
         Unlocker.global_layout_editor = self.layout_editor
@@ -143,9 +143,7 @@ class MainWindow(QMainWindow):
         self.tabs.currentChanged.connect(self.on_tab_changed)
         self.refresh_tabs()
 
-        no_devices = 'No devices detected. Connect a Vial-compatible device and press "Refresh"<br>' \
-                     'or select "File" → "Download VIA definitions" in order to enable support for VIA keyboards.<br>' \
-                     '未检测到兼容键盘，请连接一个兼容的键盘并点击"刷新"'
+        no_devices = "No compatible keyboard detected. Connect a Vial keyboard and click Refresh.<br>For VIA keyboards, choose File → Download VIA definitions."
 
         if sys.platform.startswith("linux"):
             no_devices += '<br><br>On Linux you need to set up a custom udev rule for keyboards to be detected. ' \
@@ -188,8 +186,13 @@ class MainWindow(QMainWindow):
                 # the saved file is invalid - just ignore this
                 logging.warning("Failed to parse stored via_keyboards.json: {}".format(e))
 
-        # make sure initial state is valid
-        self.on_click_refresh()
+        if sys.platform.startswith("linux"):
+            # The Linux worker already performs the initial scan. A synchronous
+            # hard refresh here races its queued result and reloads twice.
+            self.on_devices_updated([], False)
+        else:
+            # Windows notifications and WebHID need an explicit initial scan.
+            self.on_click_refresh()
 
         if sys.platform == "emscripten":
             import vialglue
@@ -355,8 +358,7 @@ class MainWindow(QMainWindow):
         try:
             self.autorefresh.select_device(self.combobox_devices.currentIndex())
         except ProtocolError:
-            QMessageBox.warning(self, "", "Unsupported protocol version!/键盘协议不兼容\n"
-                                          "Please download latest Vial from https://get.vial.today/")
+            QMessageBox.warning(self, "", "Unsupported keyboard protocol version.\nUse a Vial Astro client compatible with this keyboard firmware.")
 
         if isinstance(self.autorefresh.current_device, VialKeyboard):
             keyboard_id = self.autorefresh.current_device.keyboard.keyboard_id
@@ -471,7 +473,7 @@ class MainWindow(QMainWindow):
         themes.Theme.set_theme(theme)
         self.settings.setValue("theme", theme)
         msg = QMessageBox()
-        msg.setText(tr("MainWindow", "In order to fully apply the theme you should restart the application."))
+        msg.setText(tr("MainWindow", "Restart the application to fully apply the theme."))
         msg.exec_()
 
     def on_tab_changed(self, index):

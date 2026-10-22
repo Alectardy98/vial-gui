@@ -114,6 +114,9 @@ class TestKeyboard(unittest.TestCase):
         if encoders is not None:
             dev.expect_encoders(encoders)
 
+        # The custom client reloads AMK NKRO after the standard Vial state.
+        dev.expect("FD0D", "FD0DAA01")
+
         kb = Keyboard(dev, dev.sim_send)
         kb.reload()
 

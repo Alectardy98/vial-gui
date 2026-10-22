@@ -1,6 +1,9 @@
+import time
+
+from ui_text import device_text
 # SPDX-License-Identifier: GPL-2.0-or-later
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QLabel, QSlider, QPushButton, QCheckBox, QColorDialog, QListWidget
-from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtCore import Qt, QTimer, QSignalBlocker
 
 from PyQt5.QtGui import QPainter, QColor, QPainterPath, QTransform, QBrush, QPolygonF, QPalette
 from PyQt5.QtWidgets import QApplication
@@ -79,6 +82,7 @@ class RgbStrip(BasicEditor):
         self.device = None
         self.strip = -1
         self.mode = -1
+        self._preview_offset = 0
         self.timer = QTimer()
         self.timer.timeout.connect(self.on_rgb_strip_poller)
 
@@ -102,36 +106,36 @@ class RgbStrip(BasicEditor):
         layout.addStretch(3)
         lyt = QHBoxLayout()
         vv = QVBoxLayout()
-        vv.addWidget(QLabel(tr("RGB Strip", "Strips/灯条:")))
+        vv.addWidget(QLabel(tr("RGB Strip", "Strips")))
         self.strip_lst = QListWidget()
         self.strip_lst.itemSelectionChanged.connect(self.on_strip_changed)
         vv.addWidget(self.strip_lst)
         lyt.addLayout(vv)
         vv = QVBoxLayout()
-        vv.addWidget(QLabel(tr("RGB Strip", "Effects/灯效:")))
+        vv.addWidget(QLabel(tr("RGB Strip", "Effects")))
         self.mode_lst = QListWidget()
         self.mode_lst.itemSelectionChanged.connect(self.on_mode_changed)
         vv.addWidget(self.mode_lst)
         lyt.addLayout(vv)
         layout.addLayout(lyt)
         layout.addStretch(1)
-        self.color_btn = QPushButton(tr("RGB Strip", "Color/颜色..."))
+        self.color_btn = QPushButton(tr("RGB Strip", "Color…"))
         self.color_btn.clicked.connect(self.on_color_btn_clicked)
         layout.addWidget(self.color_btn)
-        self.on_cbx = QCheckBox(tr("RGB Strip", "Toggle On/切换状态"))
+        self.on_cbx = QCheckBox(tr("RGB Strip", "Enabled"))
         self.on_cbx.stateChanged.connect(self.on_state_check)
         layout.addWidget(self.on_cbx)
-        self.dynamic_cbx = QCheckBox(tr("RGB Strip", "Toggle Dynamic/切换动态效果"))
+        self.dynamic_cbx = QCheckBox(tr("RGB Strip", "Dynamic"))
         self.dynamic_cbx.stateChanged.connect(self.on_dynamic_check)
         layout.addWidget(self.dynamic_cbx)
-        self.blink_cbx = QCheckBox(tr("RGB Strip", "Toggle Blink/切换闪烁效果"))
+        self.blink_cbx = QCheckBox(tr("RGB Strip", "Blink"))
         self.blink_cbx.stateChanged.connect(self.on_blink_check)
         layout.addWidget(self.blink_cbx)
-        self.breath_cbx = QCheckBox(tr("RGB Strip", "Toggle Breath/切换呼吸效果"))
+        self.breath_cbx = QCheckBox(tr("RGB Strip", "Breathing"))
         self.breath_cbx.stateChanged.connect(self.on_breath_check)
         layout.addWidget(self.breath_cbx)
         lyt = QHBoxLayout()
-        lyt.addWidget(QLabel(tr("RGB Strip", "Speed/速度")))
+        lyt.addWidget(QLabel(tr("RGB Strip", "Speed")))
         self.speed_sld = QSlider(Qt.Horizontal)
         self.speed_sld.setMaximumWidth(300)
         self.speed_sld.setMinimumWidth(200)
@@ -144,7 +148,7 @@ class RgbStrip(BasicEditor):
         lyt.addWidget(self.speed_sld)
         layout.addLayout(lyt)
         lyt = QHBoxLayout()
-        self.bright_lbl = QLabel(tr("RGB Strip", "Bright/亮度"))
+        self.bright_lbl = QLabel(tr("RGB Strip", "Brightness"))
         lyt.addWidget(self.bright_lbl)
         self.bright_sld = QSlider(Qt.Horizontal)
         self.bright_sld.setMaximumWidth(300)
@@ -157,10 +161,10 @@ class RgbStrip(BasicEditor):
         self.bright_sld.valueChanged.connect(self.on_bright_sld) 
         lyt.addWidget(self.bright_sld)
         layout.addLayout(lyt)
-        self.sync_cbx = QCheckBox(tr("RGB Strip", "Toggle Synchronization/切换同步状态"))
+        self.sync_cbx = QCheckBox(tr("RGB Strip", "Synchronize"))
         self.sync_cbx.stateChanged.connect(self.on_sync_check)
         layout.addWidget(self.sync_cbx)
-        self.use_custom_cbx = QCheckBox(tr("RGB Strip", "Use Custom Color/使用自定义颜色"))
+        self.use_custom_cbx = QCheckBox(tr("RGB Strip", "Custom color"))
         self.use_custom_cbx.stateChanged.connect(self.on_use_custom_check)
         layout.addWidget(self.use_custom_cbx)
         layout.addStretch(3)
@@ -172,14 +176,27 @@ class RgbStrip(BasicEditor):
     def rebuild(self, device):
         super().rebuild(device)
         if self.valid():
+            # A newly opened keyboard may have a different strip definition.
+            if self.keyboard is not device.keyboard:
+                self.strip = -1
+                self._preview_offset = 0
             self.keyboard = device.keyboard
             self.keyboardWidget.set_keys(self.keyboard.amk_rgb_strip["layout"], [])
             self.keyboardWidget.setEnabled(True)
             self.reset_keyboard_widget()
+        else:
+            self.timer.stop()
+            self.keyboard = None
+            self.strip = self.mode = -1
+            self._preview_offset = 0
+            with QSignalBlocker(self.strip_lst), QSignalBlocker(self.mode_lst):
+                self.strip_lst.clear()
+                self.mode_lst.clear()
+            self.keyboardWidget.setEnabled(False)
 
     def valid(self):
-        return isinstance(self.device, VialKeyboard) and \
-               (self.device.keyboard and len(self.device.keyboard.amk_rgb_strip) > 0)
+        return isinstance(self.device, VialKeyboard) and bool(
+            self.device.keyboard and self.device.keyboard.amk_rgb_strip.get("strips"))
 
     def reset_mode_widgets(self):
         if self.is_custom_mode(self.strip):
@@ -196,10 +213,11 @@ class RgbStrip(BasicEditor):
     def reset_sync_widgets(self):
         self.sync_cbx.setEnabled(False)
         if self.strip != -1:
-            if "master" in self.device.keyboard.amk_rgb_strip["strips"][self.strip]:
+            strip = self.keyboard.amk_rgb_strip["strips"][self.strip]
+            if self.keyboard.rgb_strip_supports_sync(self.strip) and "sync" in strip:
                 self.sync_cbx.setEnabled(True)
-                strip = self.keyboard.amk_rgb_strip["strips"][self.strip]
-                self.sync_cbx.setChecked(True if strip["sync"] < len(self.keyboard.amk_rgb_strip["strips"]) else False)
+                with QSignalBlocker(self.sync_cbx):
+                    self.sync_cbx.setChecked(True if strip["sync"] < len(self.keyboard.amk_rgb_strip["strips"]) else False)
 
     def reset_use_custom_widgets(self):
         self.use_custom_cbx.setEnabled(True if self.keyboard.amk_feature["use_custom_color"] else False)
@@ -222,35 +240,36 @@ class RgbStrip(BasicEditor):
 
     def reset_keyboard_widget(self):
         if self.valid():
-            self.strip_lst.clear()
-            for strip in self.keyboard.amk_rgb_strip["strips"]:
-                self.strip_lst.addItem(strip["name"])
-
-            self.mode_lst.clear()
-            for effect in self.keyboard.amk_rgb_strip["effects"]:
-                self.mode_lst.addItem(effect)
+            # Populate both lists before displaying the selected strip. Qt list
+            # signals during clear/repopulation must never act as user edits.
+            with QSignalBlocker(self.strip_lst), QSignalBlocker(self.mode_lst):
+                self.strip_lst.clear()
+                for strip in self.keyboard.amk_rgb_strip["strips"]:
+                    self.strip_lst.addItem(device_text(strip["name"]))
+                self.mode_lst.clear()
+                for effect in self.keyboard.amk_rgb_strip["effects"]:
+                    self.mode_lst.addItem(device_text(effect))
+                if not 0 <= self.strip < self.strip_lst.count():
+                    self.strip = 0
+                self.strip_lst.setCurrentRow(self.strip)
+            self.on_strip_changed()
 
             self.keyboardWidget.update_layout()
             for widget in self.keyboardWidget.widgets:
                 widget.masked = True
                 widget.setOn(False)
 
-            self.reset_mode_widgets()
-            self.reset_sync_widgets()
-            self.reset_bright_widgets()
-            self.reset_use_custom_widgets()
             self.keyboardWidget.update()
             self.keyboardWidget.updateGeometry()
 
     def activate(self):
+        self._preview_offset = 0
         if self.valid():
-            try:
-                self.keyboard.reload_rgb_leds(self.keyboard.amk_rgb_strip["start"], self.keyboard.amk_rgb_strip["count"])
-            except (RuntimeError, ValueError):
-                pass
-
             self.reset_keyboard_widget()
+            self.on_rgb_strip_poller()
             self.timer.start(50)
+        else:
+            self.timer.stop()
 
     def deactivate(self):
         self.timer.stop()
@@ -457,7 +476,11 @@ class RgbStrip(BasicEditor):
         index = self.get_led_index(strip, offset)
         led = None
         if index is not None:
-            color = self.keyboard.amk_rgb_data[index]
+            sampled = self.keyboard.amk_rgb_data[index]
+            # A large sweep may need several ticks after the first connection.
+            # Unsampled buffer entries are initialized to integer zero.
+            if isinstance(sampled, RgbColor):
+                color = sampled
             if self.is_custom_mode(strip):
                 led = self.keyboard.amk_rgb_strip["leds"][index]
 
@@ -469,11 +492,25 @@ class RgbStrip(BasicEditor):
             return
         
         try:
+            # All previews share the rendered RGB buffer. Read the declared
+            # feature range, independent of the strip selected for editing.
             start = self.keyboard.amk_rgb_strip["start"]
-            for i in range(len(self.keyboard.amk_rgb_strip["strips"])):
-                if i == self.strip:
-                    strip = self.keyboard.amk_rgb_strip["strips"][i]
-                    self.keyboard.reload_rgb_leds(start+strip["start"], strip["count"])
+            count = self.keyboard.amk_rgb_strip["count"]
+            if not 0 <= self._preview_offset < count:
+                self._preview_offset = 0
+            packet_size = 8 if self.keyboard.amk_rgb_led["protocol_v2"] else 9
+            deadline = time.monotonic() + 0.040
+            while self._preview_offset < count:
+                size = min(packet_size, count - self._preview_offset)
+                self.keyboard.reload_rgb_leds(start + self._preview_offset, size)
+                self._preview_offset += size
+                if self._preview_offset == count:
+                    self._preview_offset = 0
+                    break
+                # Bound a busy Qt callback to a few reports. Large/slow sweeps
+                # resume on the same timer's next tick, without starving later LEDs.
+                if time.monotonic() >= deadline:
+                    break
 
         except (RuntimeError, ValueError):
             self.timer.stop()
@@ -487,15 +524,19 @@ class RgbStrip(BasicEditor):
 
     def on_strip_changed(self):
         cur = self.strip_lst.currentRow()
-        if cur == -1:
+        if not self.valid() or not 0 <= cur < len(self.keyboard.amk_rgb_strip["strips"]):
             return
 
         self.strip = cur
         self.mode = self.keyboard.amk_rgb_strip["strips"][cur]["mode"]
-        self.mode_lst.setCurrentRow(self.mode)
-
-        self.reset_sync_widgets()
-        self.reset_use_custom_widgets()
+        # Selecting or refreshing a strip displays cached settings, not edits.
+        with QSignalBlocker(self.mode_lst), QSignalBlocker(self.sync_cbx), \
+                QSignalBlocker(self.use_custom_cbx), QSignalBlocker(self.bright_sld):
+            self.mode_lst.setCurrentRow(self.mode)
+            self.reset_mode_widgets()
+            self.reset_sync_widgets()
+            self.reset_bright_widgets()
+            self.reset_use_custom_widgets()
 
     def on_mode_changed(self):
         cur = self.mode_lst.currentRow()

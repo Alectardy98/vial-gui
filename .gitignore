@@ -3,3 +3,7 @@ target
 __pycache__
 *.pyc
 .idea
+
+# Isolated native Linux build tools
+.build-tools/
+.venv-linux/

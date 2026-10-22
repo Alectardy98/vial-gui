@@ -29,7 +29,7 @@ def apc_rt_display(widget, apc, rt):
     else:
         apc_text = "{:.2f}\u2193".format(apc/100.0)
 
-    tooltip = tr("APCRT", "APC/RT setting/设置")
+    tooltip = tr("APCRT", "Actuation point / Rapid Trigger")
     widget.setText(apc_text)
     widget.setToolTip(tooltip)
 
@@ -51,7 +51,7 @@ class ApcRt(BasicEditor):
         super().__init__()
 
         h_layout = QHBoxLayout()
-        profile_lbl = QLabel(tr("APCRT", "Profiles/配置列表: "))
+        profile_lbl = QLabel(tr("APCRT", "Profile:"))
         h_layout.addWidget(profile_lbl)
         self.profile_btns = []
         for x in range(4):
@@ -86,7 +86,7 @@ class ApcRt(BasicEditor):
 
         apc_rt_layout = QGridLayout()
 
-        self.apc_lbl = QLabel(tr("APCRT", "Set the actuation point/设置当前激活行程:"))
+        self.apc_lbl = QLabel(tr("APCRT", "Actuation point (mm):"))
         self.apc_dpb = QDoubleSpinBox()
         #self.apc_dpb.setReadOnly(True)
         #self.apc_dpb.setRange(0.01*self.keyboard.amk_apcrt_scale, 4.0)
@@ -107,11 +107,11 @@ class ApcRt(BasicEditor):
         apc_rt_layout.addWidget(self.apc_dpb, 0, 1)
         apc_rt_layout.addWidget(self.apc_sld, 0, 2)
 
-        self.rt_cbx = QCheckBox(tr("APCRT", "Enable/激活 RT"))
+        self.rt_cbx = QCheckBox(tr("APCRT", "Rapid Trigger"))
         self.rt_cbx.setTristate(False)
         self.rt_cbx.setCheckState(Qt.Unchecked)
         self.rt_cbx.stateChanged.connect(self.on_rt_check)
-        self.rt_lbl = QLabel(tr("APCRT", "Set the rappid trigger/设置 RT:"))
+        self.rt_lbl = QLabel(tr("APCRT", "Rapid Trigger distance (mm):"))
         self.rt_dpb = QDoubleSpinBox()
         #self.rt_dpb.setReadOnly(True)
         self.rt_dpb.setEnabled(False)
@@ -130,7 +130,7 @@ class ApcRt(BasicEditor):
         self.rt_sld.setTracking(False)
         self.rt_sld.valueChanged.connect(self.on_rt_sld) 
 
-        self.rt_cont_cbx = QCheckBox(tr("APCRT", "Enable continuous/启用连续 RT"))
+        self.rt_cont_cbx = QCheckBox(tr("APCRT", "Continuous Rapid Trigger"))
         self.rt_cont_cbx.setTristate(False)
         self.rt_cont_cbx.setEnabled(False)
         self.rt_cont_cbx.setCheckState(Qt.Unchecked)
@@ -142,12 +142,12 @@ class ApcRt(BasicEditor):
         apc_rt_layout.addWidget(self.rt_cbx, 1, 3)
         apc_rt_layout.addWidget(self.rt_cont_cbx, 1, 4)
 
-        self.rt_down_cbx = QCheckBox(tr("APCRT", "Enable press/启用按下 RT"))
+        self.rt_down_cbx = QCheckBox(tr("APCRT", "Separate press distance"))
         self.rt_down_cbx.setTristate(False)
         self.rt_down_cbx.setEnabled(False)
         self.rt_down_cbx.setCheckState(Qt.Unchecked)
         self.rt_down_cbx.stateChanged.connect(self.on_rt_down_check)
-        self.rt_down_lbl = QLabel(tr("APCRT", "Set the rappid trigger press/设置按下RT:"))
+        self.rt_down_lbl = QLabel(tr("APCRT", "Press distance (mm):"))
         self.rt_down_dpb = QDoubleSpinBox()
         #self.rt_down_dpb.setReadOnly(True)
         self.rt_down_dpb.setEnabled(False)
@@ -331,7 +331,7 @@ class ApcRt(BasicEditor):
 
         if rt is None:
             self.rt_cbx.setCheckState(Qt.Unchecked)
-            self.rt_lbl.setText(tr("APCRT", "Set the rappid trigger/设置RT:"))
+            self.rt_lbl.setText(tr("APCRT", "Rapid Trigger distance (mm):"))
             self.rt_sld.setEnabled(False)
             self.rt_dpb.setEnabled(False)
 
@@ -357,7 +357,7 @@ class ApcRt(BasicEditor):
                     self.rt_cont_cbx.setCheckState(Qt.Unchecked)
 
                 if rt["down"] > 0:
-                    self.rt_lbl.setText(tr("APCRT", "Set the rappid trigger release/设置抬起RT:"))
+                    self.rt_lbl.setText(tr("APCRT", "Release distance (mm):"))
                     self.rt_down_cbx.setCheckState(Qt.Checked)
 
                     self.rt_down_sld.setEnabled(True)
@@ -365,7 +365,7 @@ class ApcRt(BasicEditor):
                     self.rt_down_sld.setValue(int(self.apcrt_scale(rt["down"])))
                     self.rt_down_dpb.setValue(rt["down"]/100.0)
                 else:
-                    self.rt_lbl.setText(tr("APCRT", "Set the rappid trigger/激活RT:"))
+                    self.rt_lbl.setText(tr("APCRT", "Rapid Trigger distance (mm):"))
                     self.rt_down_sld.setEnabled(False)
                     self.rt_down_dpb.setEnabled(False)
             else:
@@ -618,13 +618,13 @@ class ApcRt(BasicEditor):
         self.rt_down_dpb.blockSignals(True)
 
         if self.rt_down_cbx.isChecked():
-            self.rt_lbl.setText(tr("APCRT", "Set the rappid trigger release/设置抬起RT:"))
+            self.rt_lbl.setText(tr("APCRT", "Release distance (mm):"))
             self.rt_down_dpb.setEnabled(True)
             self.rt_down_sld.setEnabled(True)
             self.rt_down_sld.setValue(int(self.apcrt_scale(AMK_RT_DEFAULT)))
             self.rt_down_dpb.setValue(AMK_RT_DEFAULT/AMK_APCRT_SCALE_DOWN)
         else:
-            self.rt_lbl.setText(tr("APCRT", "Set the rappid trigger/设置RT:"))
+            self.rt_lbl.setText(tr("APCRT", "Rapid Trigger distance (mm):"))
             self.rt_down_sld.setValue(0)
             self.rt_down_dpb.setValue(0.0)
             self.rt_down_dpb.setEnabled(False)
